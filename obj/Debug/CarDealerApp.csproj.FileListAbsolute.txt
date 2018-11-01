@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\bin\Debug\CarDealerApp.exe.config
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\bin\Debug\CarDealerApp.exe
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\bin\Debug\CarDealerApp.pdb
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.csprojAssemblyReference.cache
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.DashBoard.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.Properties.Resources.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.csproj.GenerateResource.cache
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.exe
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.pdb
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddCarType.resources
