@@ -24,6 +24,11 @@ namespace CarDealerApp
 
         private void addNewCarTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void addNewCarTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             AddCarType ct = new AddCarType();
             ct.Show();
         }

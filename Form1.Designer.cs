@@ -34,10 +34,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewCarTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carTypesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +93,22 @@
             this.addNewCarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewCarToolStripMenuItem.Text = "Add New Car";
             // 
+            // addNewCarTypeToolStripMenuItem
+            // 
+            this.addNewCarTypeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewCarTypesToolStripMenuItem,
+            this.carTypesListToolStripMenuItem});
+            this.addNewCarTypeToolStripMenuItem.Name = "addNewCarTypeToolStripMenuItem";
+            this.addNewCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewCarTypeToolStripMenuItem.Text = "Car Types";
+            this.addNewCarTypeToolStripMenuItem.Click += new System.EventHandler(this.addNewCarTypeToolStripMenuItem_Click);
+            // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.userToolStripMenuItem.Text = "User";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -99,24 +117,24 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // addNewCarTypeToolStripMenuItem
-            // 
-            this.addNewCarTypeToolStripMenuItem.Name = "addNewCarTypeToolStripMenuItem";
-            this.addNewCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addNewCarTypeToolStripMenuItem.Text = "Add New Car Type";
-            this.addNewCarTypeToolStripMenuItem.Click += new System.EventHandler(this.addNewCarTypeToolStripMenuItem_Click);
-            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // userToolStripMenuItem
+            // addNewCarTypesToolStripMenuItem
             // 
-            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.userToolStripMenuItem.Text = "User";
+            this.addNewCarTypesToolStripMenuItem.Name = "addNewCarTypesToolStripMenuItem";
+            this.addNewCarTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewCarTypesToolStripMenuItem.Text = "Add New Car Types";
+            this.addNewCarTypesToolStripMenuItem.Click += new System.EventHandler(this.addNewCarTypesToolStripMenuItem_Click);
+            // 
+            // carTypesListToolStripMenuItem
+            // 
+            this.carTypesListToolStripMenuItem.Name = "carTypesListToolStripMenuItem";
+            this.carTypesListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carTypesListToolStripMenuItem.Text = "Car Types List";
             // 
             // DashBoard
             // 
@@ -147,6 +165,8 @@
         private System.Windows.Forms.ToolStripMenuItem addNewCarTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewCarTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carTypesListToolStripMenuItem;
     }
 }
 
