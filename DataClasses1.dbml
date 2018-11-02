@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CarDealerDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-8F08CSV51AA;Initial Catalog=CarDealerDB;Integrated Security=True" SettingsObjectName="CarDealerApp.Properties.Settings" SettingsPropertyName="CarDealerDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Car" Member="Cars">
+    <Type Name="Car">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Manufacturer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Model_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CarType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Condition" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OdoMeter" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Engine" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="CarType_Car" Member="CarType" ThisKey="CarType_ID" OtherKey="ID" Type="CarType" IsForeignKey="true" />
+      <Association Name="Manufacturer_Car" Member="Manufacturer" ThisKey="Manufacturer_ID" OtherKey="ID" Type="Manufacturer" IsForeignKey="true" />
+      <Association Name="Model_Car" Member="Model" ThisKey="Model_ID" OtherKey="ID" Type="Model" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarType" Member="CarTypes">
+    <Type Name="CarType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CarTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarTypeImg" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="CarType_Car" Member="Cars" ThisKey="ID" OtherKey="CarType_ID" Type="Car" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manufacturer" Member="Manufacturers">
+    <Type Name="Manufacturer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ManName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Manufacturer_Car" Member="Cars" ThisKey="ID" OtherKey="Manufacturer_ID" Type="Car" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Model" Member="Models">
+    <Type Name="Model">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Manufacturer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Model_Car" Member="Cars" ThisKey="ID" OtherKey="Model_ID" Type="Car" />
+    </Type>
+  </Table>
+</Database>
