@@ -32,5 +32,11 @@ namespace CarDealerApp
             AddCarType ct = new AddCarType();
             ct.Show();
         }
+
+        private void CarList_Click(object sender, EventArgs e)
+        {
+            CarList cl = new CarList();
+            cl.Show();
+        }
     }
 }

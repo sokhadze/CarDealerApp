@@ -44,14 +44,14 @@ namespace CarDealerApp
                 FileStream fs = new FileStream(SelectedImg,FileMode.Open,FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
                 img = br.ReadBytes((int)fs.Length);
-                string query = "INSERT INTO CarType(Name,Img) VALUES(N'"+TypeName.Text+"','@Img')";
+                string query = "INSERT INTO CarType(CarTypeName,CarTypeImg) VALUES(N'"+TypeName.Text+ "','@CarTypeImg')";
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 SqlCommand SqlComm = new SqlCommand(query, conn);
-                SqlComm.Parameters.Add(new SqlParameter("Img",img));
+                SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
                 int x = SqlComm.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show(x.ToString()+" Rrecors saved!");
+                MessageBox.Show(x.ToString()+" მანქანის ტიპი წარმატებით დაემატა!");
                 Close();
             }
             catch(Exception ex)
@@ -59,6 +59,11 @@ namespace CarDealerApp
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void AddCarType_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

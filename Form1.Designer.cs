@@ -60,6 +60,7 @@
             this.CarList.Text = "მანქანების სია";
             this.CarList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CarList.UseVisualStyleBackColor = false;
+            this.CarList.Click += new System.EventHandler(this.CarList_Click);
             // 
             // menuStrip1
             // 

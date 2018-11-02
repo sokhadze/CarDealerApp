@@ -32,9 +32,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.TypeName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,14 +64,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "მანქანის ტიპი:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(87, 120);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 71);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(87, 63);
@@ -86,6 +78,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(87, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(156, 71);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // AddCarType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +99,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddCarType";
             this.Text = "მანქანის ტიპის დამატება";
+            this.Load += new System.EventHandler(this.AddCarType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
