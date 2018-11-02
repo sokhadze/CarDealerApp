@@ -40,6 +40,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carTypesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carManufacturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +83,8 @@
             // 
             this.carToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewCarToolStripMenuItem,
-            this.addNewCarTypeToolStripMenuItem});
+            this.addNewCarTypeToolStripMenuItem,
+            this.carManufacturerToolStripMenuItem});
             this.carToolStripMenuItem.Name = "carToolStripMenuItem";
             this.carToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.carToolStripMenuItem.Text = "Car";
@@ -136,6 +138,12 @@
             this.carTypesListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.carTypesListToolStripMenuItem.Text = "Car Types List";
             // 
+            // carManufacturerToolStripMenuItem
+            // 
+            this.carManufacturerToolStripMenuItem.Name = "carManufacturerToolStripMenuItem";
+            this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carManufacturerToolStripMenuItem.Text = "Car Manufacturer";
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +175,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCarTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carTypesListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carManufacturerToolStripMenuItem;
     }
 }
 
