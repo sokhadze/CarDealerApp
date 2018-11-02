@@ -50,8 +50,8 @@ namespace CarDealerApp
             foreach (var x in query)
             {
                 row = dt.NewRow();
-                byte[] img = (byte[])x.CarTypeImg;
-                dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, br);
+               // byte[] img = (byte[])x.CarTypeImg;
+                //dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, br);
                 Console.WriteLine(x.CarTypeImg+" -----------");
             }
             dataGridView1.DataSource = query;

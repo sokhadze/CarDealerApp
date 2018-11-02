@@ -43,6 +43,7 @@ namespace CarDealerApp
                 byte[] img = null;
                 FileStream fs = new FileStream(SelectedImg,FileMode.Open,FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
+                //byte[] image = File.ReadAllBytes((int)fs.Length);
                 img = br.ReadBytes((int)fs.Length);
                 string query = "INSERT INTO CarType(CarTypeName,CarTypeImg) VALUES(N'"+TypeName.Text+ "','@CarTypeImg')";
                 if (conn.State != ConnectionState.Open)
