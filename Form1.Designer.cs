@@ -41,6 +41,7 @@
             this.addNewCarTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carTypesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carManufacturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,11 +145,28 @@
             this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.carManufacturerToolStripMenuItem.Text = "Car Manufacturer";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(223, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 121);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "გაყიდული მანქანები";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 640);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CarList);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -176,6 +194,7 @@
         private System.Windows.Forms.ToolStripMenuItem addNewCarTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carTypesListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carManufacturerToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 
