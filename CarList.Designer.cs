@@ -37,8 +37,6 @@
             this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.carTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carTypeTableAdapter = new CarDealerApp.CarDealerDBDataSetTableAdapters.CarTypeTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CarTypeImg = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,9 +73,6 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.CarTypeImg});
             this.dataGridView1.DataSource = this.carTypeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(25, 154);
             this.dataGridView1.Name = "dataGridView1";
@@ -98,20 +93,6 @@
             // carTypeTableAdapter
             // 
             this.carTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // CarTypeImg
-            // 
-            this.CarTypeImg.DataPropertyName = "Img";
-            this.CarTypeImg.HeaderText = "Img";
-            this.CarTypeImg.Name = "CarTypeImg";
-            this.CarTypeImg.ReadOnly = true;
             // 
             // CarList
             // 
@@ -140,7 +121,5 @@
         private System.Windows.Forms.BindingSource carBindingSource1;
         private System.Windows.Forms.BindingSource carTypeBindingSource;
         private CarDealerDBDataSetTableAdapters.CarTypeTableAdapter carTypeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn CarTypeImg;
     }
 }

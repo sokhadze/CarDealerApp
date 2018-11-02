@@ -22,40 +22,39 @@ namespace CarDealerApp
         private void CarList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'carDealerDBDataSet.CarType' table. You can move, or remove it, as needed.
-            //Obtaining the data source 
-            //DataClasses1DataContext db = new DataClasses1DataContext();
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("ID");
-            //dt.Columns.Add("მწარმოებელი");
-            //dt.Columns.Add("მოდელი");
-            //dt.Columns.Add("ტიპი");
-            //dt.Columns.Add("Kusu");
-            //dt.Columns.Add("Cena");
-            //DataRow row = null;
-
-
-            //var query = from car in db.Cars
-            //            join c in db.Manufacturers on car.Manufacturer_ID equals c.ID
-            //            join d in db.Models on car.Model_ID equals d.ID
-            //            join t in db.CarTypes on car.CarType_ID equals t.ID
-            //            select new
-            //            {
-            //                car.ID,
-            //                c.ManName,
-            //                d.ModelName,
-            //                t.CarTypeName,
-            //                t.CarTypeImg
-            //            };
             
-            //foreach (var x in query)
-            //{
-            //    row = dt.NewRow();
-            //    MemoryStream ms = new MemoryStream((byte[])x.CarTypeImg.ToArray());
+            DataClasses1DataContext db = new DataClasses1DataContext();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("მწარმოებელი");
+            dt.Columns.Add("მოდელი");
+            dt.Columns.Add("ტიპი");
+            dt.Columns.Add("Kusu");
+            dt.Columns.Add("Cena");
+            DataRow row = null;
 
-            //    dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, x.CarTypeImg);
-            //    Console.WriteLine(x.CarTypeImg);
-            //}
-            //dataGridView1.DataSource = query;
+
+            var query = from car in db.Cars
+                        join c in db.Manufacturers on car.Manufacturer_ID equals c.ID
+                        join d in db.Models on car.Model_ID equals d.ID
+                        join t in db.CarTypes on car.CarType_ID equals t.ID
+                        select new
+                        {
+                            car.ID,
+                            c.ManName,
+                            d.ModelName,
+                            t.CarTypeName,
+                            t.CarTypeImg
+                        };
+
+            foreach (var x in query)
+            {
+                row = dt.NewRow();
+                byte[] img = (byte[])x.CarTypeImg;
+                dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, br);
+                Console.WriteLine(x.CarTypeImg+" -----------");
+            }
+            dataGridView1.DataSource = query;
 
             //var query = from car in db.Cars
             //            join c in db.Manufacturers
