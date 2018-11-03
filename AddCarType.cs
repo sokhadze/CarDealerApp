@@ -45,11 +45,11 @@ namespace CarDealerApp
                 BinaryReader br = new BinaryReader(fs);
                 //byte[] image = File.ReadAllBytes((int)fs.Length);
                 img = br.ReadBytes((int)fs.Length);
-                string query = "INSERT INTO CarType(CarTypeName,CarTypeImg) VALUES(N'"+TypeName.Text+ "','@CarTypeImg')";
+                string query = "INSERT INTO CarType(CarTypeName,CarTypeImg) VALUES(N'"+TypeName.Text+ "','"+img+"')";
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 SqlCommand SqlComm = new SqlCommand(query, conn);
-                SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
+               // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
                 int x = SqlComm.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show(x.ToString()+" მანქანის ტიპი წარმატებით დაემატა!");

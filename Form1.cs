@@ -38,5 +38,11 @@ namespace CarDealerApp
             CarList cl = new CarList();
             cl.Show();
         }
+
+        private void carTypesListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListOfCarTypes lct = new ListOfCarTypes();
+            lct.Show();
+        }
     }
 }

@@ -10,3 +10,4 @@ C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.exe
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.pdb
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddCarType.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarList.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.ListOfCarTypes.resources

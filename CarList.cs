@@ -17,7 +17,6 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
-        public string PaymentMode { get; set; }
 
         private void CarList_Load(object sender, EventArgs e)
         {
@@ -50,9 +49,12 @@ namespace CarDealerApp
             foreach (var x in query)
             {
                 row = dt.NewRow();
-               // byte[] img = (byte[])x.CarTypeImg;
-                //dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, br);
-                Console.WriteLine(x.CarTypeImg+" -----------");
+                //byte[] img = Convert.ToByte(x.CarTypeImg);
+                //string base64String = Convert.ToBase64String(x.CarTypeImg, 0, x.CarTypeImg.Length);
+
+                //MemoryStream ms = new MemoryStream(img);
+                dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, MyMethods.ConvertToImage(x.CarTypeImg));
+                //Console.WriteLine(Convert.ToBase64String(ConvertToImage(x.CarTypeImg))" -----------");
             }
             dataGridView1.DataSource = query;
 
@@ -85,22 +87,23 @@ namespace CarDealerApp
 
         }
 
-        public Image ByteArrayToImage(byte[] Byte)
-        {
-            try
-            {
-                using (MemoryStream ms = new MemoryStream(Byte))
-                {
-                    Image returnImage = Image.FromStream(ms);
-                    return returnImage;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-        }
+        //public Image ByteArrayToImage(byte[] Byte)
+        //{
+        //    try
+        //    {
+        //        using (MemoryStream ms = new MemoryStream(Byte))
+        //        {
+        //            Image returnImage = Image.FromStream(ms);
+        //            return returnImage;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //    }
+        //}
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
