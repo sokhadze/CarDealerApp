@@ -17,7 +17,30 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
+        public static Image ByteArrayToImage(byte[] bArray)
+        {
+            if (bArray == null)
+                return null;
 
+            Image newImage;
+
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(bArray, 0, bArray.Length))
+                {
+                    ms.Write(bArray, 0, bArray.Length);
+                    newImage = Image.FromStream(ms, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                newImage = null;
+
+                //Log an error here
+            }
+
+            return newImage;
+        }
         private void CarList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'carDealerDBDataSet.CarType' table. You can move, or remove it, as needed.
@@ -32,7 +55,6 @@ namespace CarDealerApp
             dt.Columns.Add("Cena");
             DataRow row = null;
 
-
             var query = from car in db.Cars
                         join c in db.Manufacturers on car.Manufacturer_ID equals c.ID
                         join d in db.Models on car.Model_ID equals d.ID
@@ -43,21 +65,27 @@ namespace CarDealerApp
                             c.ManName,
                             d.ModelName,
                             t.CarTypeName,
-                            t.CarTypeImg
+                            car.Year,
+                            car.OdoMeter,
+                            car.Condition,
+                            car.Price,
+                            car.Engine
                         };
 
             foreach (var x in query)
             {
                 row = dt.NewRow();
-                //byte[] img = Convert.ToByte(x.CarTypeImg);
+
                 //string base64String = Convert.ToBase64String(x.CarTypeImg, 0, x.CarTypeImg.Length);
 
                 //MemoryStream ms = new MemoryStream(img);
-                dt.Rows.Add(x.ID, x.ManName, x.ModelName, x.CarTypeName, MyMethods.ConvertToImage(x.CarTypeImg));
+                dt.Rows.Add(x.ID, x.ManName, x.Price+" ლარი", x.Year, x.OdoMeter,x.Engine+"L");
                 //Console.WriteLine(Convert.ToBase64String(ConvertToImage(x.CarTypeImg))" -----------");
             }
-            dataGridView1.DataSource = query;
 
+            dataGridView1.DataSource = query;
+            dataGridView1.Columns[0].Width = 28;
+            //dataGridView1.Columns[]
             //var query = from car in db.Cars
             //            join c in db.Manufacturers
             //            on car.Manufacturer_ID equals c.ID
@@ -87,23 +115,8 @@ namespace CarDealerApp
 
         }
 
-        //public Image ByteArrayToImage(byte[] Byte)
-        //{
-        //    try
-        //    {
-        //        using (MemoryStream ms = new MemoryStream(Byte))
-        //        {
-        //            Image returnImage = Image.FromStream(ms);
-        //            return returnImage;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        return null;
-        //    }
-        //}
-        
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

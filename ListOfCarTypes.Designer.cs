@@ -29,27 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.carTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carDealerDBDataSet1 = new CarDealerApp.CarDealerDBDataSet();
             this.carTypeTableAdapter = new CarDealerApp.CarDealerDBDataSetTableAdapters.CarTypeTableAdapter();
             this.tableAdapterManager = new CarDealerApp.CarDealerDBDataSetTableAdapters.TableAdapterManager();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataSet1 = new System.Data.DataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.carTypeDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.carTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carTypeDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(99, 217);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(522, 253);
-            this.dataGridView1.TabIndex = 0;
             // 
             // carTypeBindingSource
             // 
@@ -74,45 +65,70 @@
             this.tableAdapterManager.ModelTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = CarDealerApp.CarDealerDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // pictureBox1
+            // carTypeDataGridView
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(650, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.carTypeDataGridView.AllowUserToAddRows = false;
+            this.carTypeDataGridView.AllowUserToDeleteRows = false;
+            this.carTypeDataGridView.AutoGenerateColumns = false;
+            this.carTypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.carTypeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewImageColumn1});
+            this.carTypeDataGridView.DataSource = this.carTypeBindingSource;
+            this.carTypeDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.carTypeDataGridView.Name = "carTypeDataGridView";
+            this.carTypeDataGridView.ReadOnly = true;
+            this.carTypeDataGridView.Size = new System.Drawing.Size(345, 321);
+            this.carTypeDataGridView.TabIndex = 2;
             // 
-            // dataSet1
+            // dataGridViewTextBoxColumn1
             // 
-            this.dataSet1.DataSetName = "NewDataSet";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 22;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CarTypeName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CarTypeName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 180;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "CarTypeImg";
+            this.dataGridViewImageColumn1.HeaderText = "CarTypeImg";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
             // 
             // ListOfCarTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 613);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(370, 345);
+            this.Controls.Add(this.carTypeDataGridView);
             this.Name = "ListOfCarTypes";
             this.Text = "ListOfCarTypes";
             this.Load += new System.EventHandler(this.ListOfCarTypes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carDealerDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carTypeDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private CarDealerDBDataSet carDealerDBDataSet1;
         private System.Windows.Forms.BindingSource carTypeBindingSource;
         private CarDealerDBDataSetTableAdapters.CarTypeTableAdapter carTypeTableAdapter;
         private CarDealerDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.DataGridView carTypeDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

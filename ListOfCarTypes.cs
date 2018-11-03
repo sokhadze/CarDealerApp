@@ -49,22 +49,7 @@ namespace CarDealerApp
             //    //Console.WriteLine(Convert.ToBase64String(ConvertToImage(x.CarTypeImg))" -----------");
             //}
             //dataGridView1.DataSource = query;
-            string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(ConnString))
-            {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(
-                    new SqlCommand("SELECT * FROM CarType", conn));
-                DataSet dataSet = new DataSet();
-                DataGridView dg = new DataGridView();
-                dataAdapter.Fill(dataSet1);
-                if (dataSet.Tables[0].Rows.Count == 1)
-                {
-                    Byte[] data = new Byte[0];
-                    data = (Byte[])(dataSet.Tables[0].Rows[0]["pic"]);
-                    MemoryStream mem = new MemoryStream(data);
-                    pictureBox1.Image = Image.FromStream(mem);
-                }
-            }
+            
             
         }
 
@@ -76,17 +61,6 @@ namespace CarDealerApp
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.carTypeTableAdapter.FillBy(this.carDealerDBDataSet1.CarType);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+        
     }
 }
