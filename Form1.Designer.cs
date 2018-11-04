@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
-            this.CarList = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,26 +40,12 @@
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewCarManufacturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carManufacturerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.CarList = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // CarList
-            // 
-            this.CarList.BackColor = System.Drawing.SystemColors.Menu;
-            this.CarList.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
-            this.CarList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CarList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CarList.FlatAppearance.BorderSize = 0;
-            this.CarList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CarList.Location = new System.Drawing.Point(30, 68);
-            this.CarList.Name = "CarList";
-            this.CarList.Size = new System.Drawing.Size(135, 121);
-            this.CarList.TabIndex = 0;
-            this.CarList.Text = "მანქანების სია";
-            this.CarList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.CarList.UseVisualStyleBackColor = false;
-            this.CarList.Click += new System.EventHandler(this.CarList_Click);
             // 
             // menuStrip1
             // 
@@ -123,6 +108,9 @@
             // 
             // carManufacturerToolStripMenuItem
             // 
+            this.carManufacturerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewCarManufacturerToolStripMenuItem,
+            this.carManufacturerListToolStripMenuItem});
             this.carManufacturerToolStripMenuItem.Name = "carManufacturerToolStripMenuItem";
             this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.carManufacturerToolStripMenuItem.Text = "Car Manufacturer";
@@ -147,6 +135,19 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // addNewCarManufacturerToolStripMenuItem
+            // 
+            this.addNewCarManufacturerToolStripMenuItem.Name = "addNewCarManufacturerToolStripMenuItem";
+            this.addNewCarManufacturerToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.addNewCarManufacturerToolStripMenuItem.Text = "Add New Car Manufacturer";
+            // 
+            // carManufacturerListToolStripMenuItem
+            // 
+            this.carManufacturerListToolStripMenuItem.Name = "carManufacturerListToolStripMenuItem";
+            this.carManufacturerListToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.carManufacturerListToolStripMenuItem.Text = "Car Manufacturer List";
+            this.carManufacturerListToolStripMenuItem.Click += new System.EventHandler(this.carManufacturerListToolStripMenuItem_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Menu;
@@ -163,6 +164,23 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // CarList
+            // 
+            this.CarList.BackColor = System.Drawing.SystemColors.Menu;
+            this.CarList.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.CarList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CarList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CarList.FlatAppearance.BorderSize = 0;
+            this.CarList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CarList.Location = new System.Drawing.Point(30, 68);
+            this.CarList.Name = "CarList";
+            this.CarList.Size = new System.Drawing.Size(135, 121);
+            this.CarList.TabIndex = 0;
+            this.CarList.Text = "მანქანების სია";
+            this.CarList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CarList.UseVisualStyleBackColor = false;
+            this.CarList.Click += new System.EventHandler(this.CarList_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +193,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DashBoard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.DashBoard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -197,6 +216,8 @@
         private System.Windows.Forms.ToolStripMenuItem carTypesListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carManufacturerToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem addNewCarManufacturerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carManufacturerListToolStripMenuItem;
     }
 }
 

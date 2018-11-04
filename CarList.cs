@@ -72,16 +72,7 @@ namespace CarDealerApp
                             car.Engine
                         };
 
-            foreach (var x in query)
-            {
-                row = dt.NewRow();
-
-                //string base64String = Convert.ToBase64String(x.CarTypeImg, 0, x.CarTypeImg.Length);
-
-                //MemoryStream ms = new MemoryStream(img);
-                dt.Rows.Add(x.ID, x.ManName, x.Price+" ლარი", x.Year, x.OdoMeter,x.Engine+"L");
-                //Console.WriteLine(Convert.ToBase64String(ConvertToImage(x.CarTypeImg))" -----------");
-            }
+         
 
             dataGridView1.DataSource = query;
             dataGridView1.Columns[0].Width = 28;

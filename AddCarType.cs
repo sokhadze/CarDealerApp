@@ -38,18 +38,22 @@ namespace CarDealerApp
         {
             try
             {
+
                 string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
                 SqlConnection conn = new SqlConnection(ConnString);
-                byte[] img = null;
+                
                 FileStream fs = new FileStream(SelectedImg,FileMode.Open,FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
                 //byte[] image = File.ReadAllBytes((int)fs.Length);
-                img = br.ReadBytes((int)fs.Length);
-                string query = "INSERT INTO CarType(CarTypeName,CarTypeImg) VALUES(N'"+TypeName.Text+ "','"+img+"')";
+                byte[] img = new byte[fs.Length];
+                fs.Read(img, 0, Convert.ToInt32(fs.Length));
+                string query = "INSERT INTO CarType(CarTypeName,CarTypeImg) VALUES(N'"+TypeName.Text+ "','@img')";
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 SqlCommand SqlComm = new SqlCommand(query, conn);
-               // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
+                // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
+                SqlComm.Parameters.Add("@img", SqlDbType.Image).Value = img;
+
                 int x = SqlComm.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show(x.ToString()+" მანქანის ტიპი წარმატებით დაემატა!");

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -31,6 +34,69 @@ namespace CarDealerApp
             }
         }
 
-        
+        public static List<CarManufClass> GetCarManufList()
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    SqlCommand sqlComm = conn.CreateCommand();
+                    sqlComm.CommandText = "SELECT * FROM [CarDealerDB].[dbo].[Manufacturer]";
+                    conn.Open();
+
+                    SqlDataReader dr = sqlComm.ExecuteReader();
+                    dt.Load(dr);
+                }
+
+                List<CarManufClass> ls = (from c in dt.AsEnumerable()
+                                 select new CarManufClass
+                                 {
+                                     ID = c.Field<int>("ID"),
+                                     ManufcaturerName = c.Field<string>("ManName"),
+                                 }).ToList();
+
+                return ls;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return new List<CarManufClass>();
+            }
+        }
+
+        public static List<CarTypeListClass> GetCarTypeList()
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    SqlCommand sqlComm = conn.CreateCommand();
+                    sqlComm.CommandText = "SELECT * FROM [CarDealerDB].[dbo].[CarType]";
+                    conn.Open();
+
+                    SqlDataReader dr = sqlComm.ExecuteReader();
+                    dt.Load(dr);
+                }
+
+                List<CarTypeListClass> ls = (from c in dt.AsEnumerable()
+                                          select new CarTypeListClass
+                                          {
+                                              ID = c.Field<int>("ID"),
+                                              CarTypeName = c.Field<string>("CarTypeName"),
+                                              CarTypeImg = c.Field<byte[]>("CarTypeImg")
+                                          }).ToList();
+
+                return ls;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return new List<CarTypeListClass>();
+            }
+        }
     }
 }

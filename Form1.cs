@@ -41,8 +41,19 @@ namespace CarDealerApp
 
         private void carTypesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListOfCarTypes lct = new ListOfCarTypes();
+            CarTypeList lct = new CarTypeList();
             lct.Show();
+        }
+
+        private void carManufacturerListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CarManufList cml = new CarManufList();
+            cml.Show();
+        }
+
+        private void DashBoard_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }
