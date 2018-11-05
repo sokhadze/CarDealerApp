@@ -17,43 +17,14 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
-        public static Image ByteArrayToImage(byte[] bArray)
-        {
-            if (bArray == null)
-                return null;
-
-            Image newImage;
-
-            try
-            {
-                using (MemoryStream ms = new MemoryStream(bArray, 0, bArray.Length))
-                {
-                    ms.Write(bArray, 0, bArray.Length);
-                    newImage = Image.FromStream(ms, true);
-                }
-            }
-            catch (Exception ex)
-            {
-                newImage = null;
-
-                //Log an error here
-            }
-
-            return newImage;
-        }
+        
         private void CarList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'carDealerDBDataSet.CarType' table. You can move, or remove it, as needed.
             
             DataClasses1DataContext db = new DataClasses1DataContext();
             DataTable dt = new DataTable();
-            dt.Columns.Add("ID");
-            dt.Columns.Add("მწარმოებელი");
-            dt.Columns.Add("მოდელი");
-            dt.Columns.Add("ტიპი");
-            dt.Columns.Add("Kusu");
-            dt.Columns.Add("Cena");
-            DataRow row = null;
+       
 
             var query = from car in db.Cars
                         join c in db.Manufacturers on car.Manufacturer_ID equals c.ID

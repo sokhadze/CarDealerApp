@@ -42,8 +42,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarManufacturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carManufacturerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CarList = new System.Windows.Forms.Button();
             this.carModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carModelListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +49,12 @@
             this.editUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getAllUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.CarList = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +67,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1204, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,7 +149,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // addNewCarManufacturerToolStripMenuItem
@@ -160,39 +164,6 @@
             this.carManufacturerListToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.carManufacturerListToolStripMenuItem.Text = "Car Manufacturer List";
             this.carManufacturerListToolStripMenuItem.Click += new System.EventHandler(this.carManufacturerListToolStripMenuItem_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Menu;
-            this.button1.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(223, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 121);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "გაყიდული მანქანები";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // CarList
-            // 
-            this.CarList.BackColor = System.Drawing.SystemColors.Menu;
-            this.CarList.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
-            this.CarList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CarList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CarList.FlatAppearance.BorderSize = 0;
-            this.CarList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CarList.Location = new System.Drawing.Point(30, 68);
-            this.CarList.Name = "CarList";
-            this.CarList.Size = new System.Drawing.Size(135, 121);
-            this.CarList.TabIndex = 0;
-            this.CarList.Text = "მანქანების სია";
-            this.CarList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.CarList.UseVisualStyleBackColor = false;
-            this.CarList.Click += new System.EventHandler(this.CarList_Click);
             // 
             // carModelToolStripMenuItem
             // 
@@ -241,11 +212,114 @@
             this.getAllUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getAllUserToolStripMenuItem.Text = "Get All User";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(223, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 121);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "გაყიდული მანქანები";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // CarList
+            // 
+            this.CarList.BackColor = System.Drawing.SystemColors.Menu;
+            this.CarList.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.CarList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CarList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CarList.FlatAppearance.BorderSize = 0;
+            this.CarList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CarList.Location = new System.Drawing.Point(30, 68);
+            this.CarList.Name = "CarList";
+            this.CarList.Size = new System.Drawing.Size(135, 121);
+            this.CarList.TabIndex = 0;
+            this.CarList.Text = "მანქანების სია";
+            this.CarList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CarList.UseVisualStyleBackColor = false;
+            this.CarList.Click += new System.EventHandler(this.CarList_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Menu;
+            this.button2.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(412, 68);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 121);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "მომხმარებლების სია";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Menu;
+            this.button3.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(412, 207);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 121);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "ახალი მანქანის დამატება";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Menu;
+            this.button4.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(223, 207);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(135, 121);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "მწარმოებლების სია";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.Menu;
+            this.button5.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(30, 207);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(135, 121);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "მოდელების სია";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 640);
+            this.ClientSize = new System.Drawing.Size(588, 390);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CarList);
             this.Controls.Add(this.menuStrip1);
@@ -285,6 +359,10 @@
         private System.Windows.Forms.ToolStripMenuItem editUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getAllUserToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

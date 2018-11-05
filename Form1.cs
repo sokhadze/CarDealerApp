@@ -66,5 +66,17 @@ namespace CarDealerApp
             CarModelList cml = new CarModelList();
             cml.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CarModelList cml = new CarModelList();
+            cml.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CarManufList cml = new CarManufList();
+            cml.Show();
+        }
     }
 }
