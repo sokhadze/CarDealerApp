@@ -47,6 +47,10 @@
             this.carModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carModelListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getAllUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +125,11 @@
             // 
             // userToolStripMenuItem
             // 
+            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewUserToolStripMenuItem,
+            this.editUserToolStripMenuItem,
+            this.deleteUsersToolStripMenuItem,
+            this.getAllUserToolStripMenuItem});
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
             this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.userToolStripMenuItem.Text = "User";
@@ -206,6 +215,31 @@
             this.carModelListToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.carModelListToolStripMenuItem.Text = "Car Model List";
             // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            // 
+            // editUserToolStripMenuItem
+            // 
+            this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editUserToolStripMenuItem.Text = "Edit Users";
+            this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
+            // 
+            // deleteUsersToolStripMenuItem
+            // 
+            this.deleteUsersToolStripMenuItem.Name = "deleteUsersToolStripMenuItem";
+            this.deleteUsersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteUsersToolStripMenuItem.Text = "Delete Users";
+            // 
+            // getAllUserToolStripMenuItem
+            // 
+            this.getAllUserToolStripMenuItem.Name = "getAllUserToolStripMenuItem";
+            this.getAllUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getAllUserToolStripMenuItem.Text = "Get All User";
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +280,10 @@
         private System.Windows.Forms.ToolStripMenuItem carModelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCarModelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carModelListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getAllUserToolStripMenuItem;
     }
 }
 
