@@ -145,7 +145,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // addNewCarManufacturerToolStripMenuItem
@@ -214,6 +214,7 @@
             this.carModelListToolStripMenuItem.Name = "carModelListToolStripMenuItem";
             this.carModelListToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.carModelListToolStripMenuItem.Text = "Car Model List";
+            this.carModelListToolStripMenuItem.Click += new System.EventHandler(this.carModelListToolStripMenuItem_Click);
             // 
             // addNewUserToolStripMenuItem
             // 

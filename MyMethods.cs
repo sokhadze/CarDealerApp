@@ -98,5 +98,38 @@ namespace CarDealerApp
                 return new List<CarTypeListClass>();
             }
         }
+
+        public static List<CarModelListClass> GetCarModelList()
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    SqlCommand sqlComm = conn.CreateCommand();
+                    sqlComm.CommandText = "SELECT Model_ID, ModelName, ManName FROM [CarDealerDB].[dbo].[Model] INNER JOIN CarDealerDB.dbo.Manufacturer c ON c.ID = Model.Manufacturer_ID ";
+                    conn.Open();
+
+                    SqlDataReader dr = sqlComm.ExecuteReader();
+                    dt.Load(dr);
+                }
+
+                List<CarModelListClass> ls = (from c in dt.AsEnumerable()
+                                             select new CarModelListClass
+                                             {
+                                                 Model_ID = c.Field<int>("Model_ID"),
+                                                 ModelName = c.Field<string>("ModelName"),
+                                                 ManName = c.Field<string>("ManName")
+                                             }).ToList();
+
+                return ls;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return new List<CarModelListClass>();
+            }
+        }
     }
 }

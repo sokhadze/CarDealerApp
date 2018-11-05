@@ -24,4 +24,11 @@ namespace CarDealerApp
         public string CarTypeName { get; set; }
         public byte[] CarTypeImg { get; set; }
     }
+
+    public class CarModelListClass
+    {
+        public int Model_ID { get; set; }
+        public string ModelName { get; set; }
+        public string ManName { get; set; }
+    }
 }

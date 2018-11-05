@@ -60,5 +60,11 @@ namespace CarDealerApp
         {
 
         }
+
+        private void carModelListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CarModelList cml = new CarModelList();
+            cml.Show();
+        }
     }
 }
