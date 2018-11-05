@@ -44,6 +44,9 @@
             this.carManufacturerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.CarList = new System.Windows.Forms.Button();
+            this.carModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewCarModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carModelListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +74,8 @@
             this.carToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewCarToolStripMenuItem,
             this.addNewCarTypeToolStripMenuItem,
-            this.carManufacturerToolStripMenuItem});
+            this.carManufacturerToolStripMenuItem,
+            this.carModelToolStripMenuItem});
             this.carToolStripMenuItem.Name = "carToolStripMenuItem";
             this.carToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.carToolStripMenuItem.Text = "Car";
@@ -181,6 +185,27 @@
             this.CarList.UseVisualStyleBackColor = false;
             this.CarList.Click += new System.EventHandler(this.CarList_Click);
             // 
+            // carModelToolStripMenuItem
+            // 
+            this.carModelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewCarModelToolStripMenuItem,
+            this.carModelListToolStripMenuItem});
+            this.carModelToolStripMenuItem.Name = "carModelToolStripMenuItem";
+            this.carModelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carModelToolStripMenuItem.Text = "Car Model";
+            // 
+            // addNewCarModelToolStripMenuItem
+            // 
+            this.addNewCarModelToolStripMenuItem.Name = "addNewCarModelToolStripMenuItem";
+            this.addNewCarModelToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.addNewCarModelToolStripMenuItem.Text = "Add New Car Model";
+            // 
+            // carModelListToolStripMenuItem
+            // 
+            this.carModelListToolStripMenuItem.Name = "carModelListToolStripMenuItem";
+            this.carModelListToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.carModelListToolStripMenuItem.Text = "Car Model List";
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +243,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem addNewCarManufacturerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carManufacturerListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carModelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewCarModelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carModelListToolStripMenuItem;
     }
 }
 
