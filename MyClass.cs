@@ -14,21 +14,23 @@ namespace CarDealerApp
 
     public class CarManufClass
     {
-        public int ID { get; set; }
+        public int MA_ID { get; set; }
         public string ManufcaturerName { get; set; }
     }
 
     public class CarTypeListClass
     {
-        public int ID { get; set; }
+        public int T_ID { get; set; }
         public string CarTypeName { get; set; }
         public byte[] CarTypeImg { get; set; }
     }
 
     public class CarModelListClass
     {
-        public int Model_ID { get; set; }
+        public int M_ID { get; set; }
         public string ModelName { get; set; }
         public string ManName { get; set; }
     }
+    
+  
 }

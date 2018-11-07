@@ -429,7 +429,7 @@ namespace CarDealerApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_Car", Storage="_Model", ThisKey="Model_ID", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_Car", Storage="_Model", ThisKey="Model_ID", OtherKey="M_ID", IsForeignKey=true)]
 		public Model Model
 		{
 			get
@@ -452,7 +452,7 @@ namespace CarDealerApp
 					if ((value != null))
 					{
 						value.Cars.Add(this);
-						this._Model_ID = value.ID;
+						this._Model_ID = value.M_ID;
 					}
 					else
 					{
@@ -754,8 +754,8 @@ namespace CarDealerApp
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
+    partial void OnM_IDChanging(int value);
+    partial void OnM_IDChanged();
     partial void OnModelNameChanging(string value);
     partial void OnModelNameChanged();
     partial void OnManufacturer_IDChanging(int value);
@@ -768,8 +768,8 @@ namespace CarDealerApp
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="ID", Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int M_ID
 		{
 			get
 			{
@@ -779,11 +779,11 @@ namespace CarDealerApp
 			{
 				if ((this._ID != value))
 				{
-					this.OnIDChanging(value);
+					this.OnM_IDChanging(value);
 					this.SendPropertyChanging();
 					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
 				}
 			}
 		}
@@ -828,7 +828,7 @@ namespace CarDealerApp
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_Car", Storage="_Cars", ThisKey="ID", OtherKey="Model_ID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Model_Car", Storage="_Cars", ThisKey="M_ID", OtherKey="Model_ID")]
 		public EntitySet<Car> Cars
 		{
 			get

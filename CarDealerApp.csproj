@@ -59,6 +59,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CarDealerDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CarEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarEdit.Designer.cs">
+      <DependentUpon>CarEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddCarType.resx">
       <DependentUpon>AddCarType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarEdit.resx">
+      <DependentUpon>CarEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarList.resx">
       <DependentUpon>CarList.cs</DependentUpon>

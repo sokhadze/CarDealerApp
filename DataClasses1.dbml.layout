@@ -14,7 +14,7 @@
         <elementListCompartment Id="4b71f75e-0dcc-47f7-b2ca-197c639f1160" absoluteBounds="5.0150000000000006, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.25 : 2.5112939453125); (5.25 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 2.5112939453125); (5.25 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/CarType/CarType_Car" />
       <nodes>
         <classShapeMoniker Id="29a8fc6e-86cb-43ec-b558-aba98986b5c7" />
@@ -34,13 +34,13 @@
         <classShapeMoniker Id="0631474a-2a0d-44bb-a17b-88de07069855" />
       </nodes>
     </associationConnector>
-    <classShape Id="aa16ecea-bd39-425a-ab31-ebeeb40e3528" absoluteBounds="0.5, 3.875, 2, 1.3862939453125">
+    <classShape Id="aa16ecea-bd39-425a-ab31-ebeeb40e3528" absoluteBounds="0.875, 5, 2, 1.3862939453125">
       <DataClassMoniker Name="/DataClasses1DataContext/Model" />
       <nestedChildShapes>
-        <elementListCompartment Id="a86bdcc4-f380-405f-a7c8-273e3c7271b8" absoluteBounds="0.51500000000000012, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a86bdcc4-f380-405f-a7c8-273e3c7271b8" absoluteBounds="0.89000000000000012, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 4.56814697265625); (3.5 : 4.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.875 : 5.27005126953125); (3.5 : 5.27005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClasses1DataContext/Model/Model_Car" />
       <nodes>
         <classShapeMoniker Id="aa16ecea-bd39-425a-ab31-ebeeb40e3528" />

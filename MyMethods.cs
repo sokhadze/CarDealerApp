@@ -14,26 +14,7 @@ namespace CarDealerApp
 {
     class MyMethods
     {
-        public static Image ConvertToImage(System.Data.Linq.Binary iBinary)
-        {
-            try
-            {
-                var arrayBinary = iBinary.ToArray();
-                Image rImage = null;
-
-                using (MemoryStream ms = new MemoryStream(arrayBinary))
-                {
-                    rImage = Image.FromStream(ms);
-                }
-                return rImage;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-        }
-
+        
         public static List<CarManufClass> GetCarManufList()
         {
             try
@@ -53,7 +34,7 @@ namespace CarDealerApp
                 List<CarManufClass> ls = (from c in dt.AsEnumerable()
                                  select new CarManufClass
                                  {
-                                     ID = c.Field<int>("ID"),
+                                     MA_ID = c.Field<int>("MA_ID"),
                                      ManufcaturerName = c.Field<string>("ManName"),
                                  }).ToList();
 
@@ -85,7 +66,7 @@ namespace CarDealerApp
                 List<CarTypeListClass> ls = (from c in dt.AsEnumerable()
                                           select new CarTypeListClass
                                           {
-                                              ID = c.Field<int>("ID"),
+                                              T_ID = c.Field<int>("T_ID"),
                                               CarTypeName = c.Field<string>("CarTypeName"),
                                               CarTypeImg = c.Field<byte[]>("CarTypeImg")
                                           }).ToList();
@@ -108,7 +89,7 @@ namespace CarDealerApp
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     SqlCommand sqlComm = conn.CreateCommand();
-                    sqlComm.CommandText = "SELECT Model_ID, ModelName, ManName FROM [CarDealerDB].[dbo].[Model] INNER JOIN CarDealerDB.dbo.Manufacturer c ON c.ID = Model.Manufacturer_ID ";
+                    sqlComm.CommandText = "SELECT M_ID, ModelName, ManName FROM [CarDealerDB].[dbo].[Model] INNER JOIN CarDealerDB.dbo.Manufacturer c ON c.MA_ID = Model.Manufacturer_ID ";
                     conn.Open();
 
                     SqlDataReader dr = sqlComm.ExecuteReader();
@@ -118,7 +99,7 @@ namespace CarDealerApp
                 List<CarModelListClass> ls = (from c in dt.AsEnumerable()
                                              select new CarModelListClass
                                              {
-                                                 Model_ID = c.Field<int>("Model_ID"),
+                                                 M_ID = c.Field<int>("M_ID"),
                                                  ModelName = c.Field<string>("ModelName"),
                                                  ManName = c.Field<string>("ManName")
                                              }).ToList();
@@ -130,6 +111,67 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
                 return new List<CarModelListClass>();
             }
+        }
+        
+        public static void CarList( DataGridView grid)
+        {
+            try
+            {
+                DataTable table = new DataTable();
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    using (var command = new SqlCommand("SELECT * FROM SelectCar", conn))
+                    {
+                        table.Load(command.ExecuteReader());
+                        grid.DataSource = table;
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void DeleteCar(int ID)
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    // Creates a SQL command
+                    using (var command = new SqlCommand("DELETE FROM dbo.Car WHERE ID = "+ID+"", conn))
+                    {
+                        // Loads the query results into the table
+                        command.ExecuteReader();
+                        MessageBox.Show("მანქნა წარმატებით წაიშალა");
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void UpdateCar(int ID)
+        {
+
+        }
+
+        public static void AddNewCar()
+        {
+
         }
     }
 }

@@ -13,7 +13,7 @@
       <Column Name="Engine" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Association Name="CarType_Car" Member="CarType" ThisKey="CarType_ID" OtherKey="ID" Type="CarType" IsForeignKey="true" />
       <Association Name="Manufacturer_Car" Member="Manufacturer" ThisKey="Manufacturer_ID" OtherKey="ID" Type="Manufacturer" IsForeignKey="true" />
-      <Association Name="Model_Car" Member="Model" ThisKey="Model_ID" OtherKey="ID" Type="Model" IsForeignKey="true" />
+      <Association Name="Model_Car" Member="Model" ThisKey="Model_ID" OtherKey="M_ID" Type="Model" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CarType" Member="CarTypes">
@@ -33,10 +33,10 @@
   </Table>
   <Table Name="dbo.Model" Member="Models">
     <Type Name="Model">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID" Member="M_ID" Storage="_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ModelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Manufacturer_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Model_Car" Member="Cars" ThisKey="ID" OtherKey="Model_ID" Type="Car" />
+      <Association Name="Model_Car" Member="Cars" ThisKey="M_ID" OtherKey="Model_ID" Type="Car" />
     </Type>
   </Table>
 </Database>

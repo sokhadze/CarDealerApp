@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,72 +19,82 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
-        
+        public int RowID;
+
         private void CarList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'carDealerDBDataSet.CarType' table. You can move, or remove it, as needed.
-            
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            DataTable dt = new DataTable();
-       
+            MyMethods.CarList(dataGridView1);
 
-            var query = from car in db.Cars
-                        join c in db.Manufacturers on car.Manufacturer_ID equals c.ID
-                        join d in db.Models on car.Model_ID equals d.ID
-                        join t in db.CarTypes on car.CarType_ID equals t.ID
-                        select new
-                        {
-                            car.ID,
-                            c.ManName,
-                            d.ModelName,
-                            t.CarTypeName,
-                            car.Year,
-                            car.OdoMeter,
-                            car.Condition,
-                            car.Price,
-                            car.Engine
-                        };
-
-         
-
-            dataGridView1.DataSource = query;
-            dataGridView1.Columns[0].Width = 28;
-            //dataGridView1.Columns[]
-            //var query = from car in db.Cars
-            //            join c in db.Manufacturers
-            //            on car.Manufacturer_ID equals c.ID
-            //            select new
-            //            {
-            //                car.Manufacturer_ID,
-            //                Name = car.Manufacturer,
-            //                c.ManName
-            //            };
-
-            //foreach (var x in query)
-            //{
-            //    row = dt.NewRow();
-            //    dt.Rows.Add(x.ID, x.ManName);
-            //}
-            //dataGridView1.DataSource = query;
-
-            //// Create the query 
-            //var query = from c in cars.Cars
-            //            select c;
-
-            //// Execute the query 
-            //foreach (var c in query)
-            //{
-            //    Console.WriteLine(c.CarType_ID);
-            //} //Pause the application 
-
+            //dataGridView1.DataSource = MyMethods.GetCarList();
+            dataGridView1.Columns[0].Width = 24;
+            dataGridView1.ReadOnly = true;
         }
-
-
-
-
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            //label1.Text = "";
+            //label1.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                Int32.TryParse(selectedRow.Cells[0].Value.ToString(), out RowID);
+                label1.Text = RowID.ToString();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            MyMethods.CarList(dataGridView1);
+            dataGridView1.Columns[0].Width = 24;
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MyMethods.DeleteCar(RowID);
+            MyMethods.CarList(dataGridView1);
+            dataGridView1.Columns[0].Width = 24;
+            dataGridView1.ReadOnly = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RowID.Equals(""))
+                {
+                    MessageBox.Show("გთხოვთ აირჩიოთ მანქანა!");
+                }
+                else
+                {
+                    CarEdit ce = new CarEdit(RowID);
+                    ce.Show();
+                    int idd;
+                    Int32.TryParse(label1.Text.ToString(), out idd);
+                    //ce. = idd;
+                }
+                                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);   
+            }
         }
     }
 }
