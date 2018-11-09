@@ -81,7 +81,8 @@ namespace CarDealerApp
 
         private void addNewCarManufacturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AddCarManufacturer acm = new AddCarManufacturer();
+            acm.Show();
         }
     }
 }

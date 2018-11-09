@@ -16,5 +16,10 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
+
+        private void AddCarManufacturer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
