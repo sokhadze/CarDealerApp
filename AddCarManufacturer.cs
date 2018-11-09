@@ -19,7 +19,7 @@ namespace CarDealerApp
 
         private void AddCarManufacturer_Load(object sender, EventArgs e)
         {
-
+            //pictureBox1.ImageLocation = "C:\\Users\\User\\source\\repos\\CarDealerApp\\CarDealerApp\\CarTypes\\sedan.png";
         }
     }
 }
