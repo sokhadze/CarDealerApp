@@ -78,5 +78,10 @@ namespace CarDealerApp
             CarManufList cml = new CarManufList();
             cml.Show();
         }
+
+        private void addNewCarManufacturerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
