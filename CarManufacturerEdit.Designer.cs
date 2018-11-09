@@ -1,6 +1,6 @@
 ﻿namespace CarDealerApp
 {
-    partial class AddCarModel
+    partial class CarManufacturerEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // AddCarModel
+            // CarManufacturerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 280);
-            this.Name = "AddCarModel";
-            this.Text = "AddCarModel";
+            this.ClientSize = new System.Drawing.Size(256, 140);
+            this.Name = "CarManufacturerEdit";
+            this.Text = "CarManufacturerEdit";
             this.ResumeLayout(false);
 
         }

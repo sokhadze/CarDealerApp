@@ -163,10 +163,56 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
-
-        public static void UpdateCar(int ID)
+        public static void DeleteCarManufacturer(int ID)
         {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
 
+                    // Creates a SQL command
+                    using (var command = new SqlCommand("DELETE FROM dbo.Manufacturer WHERE MA_ID = " + ID + "", conn))
+                    {
+                        // Loads the query results into the table
+                        command.ExecuteReader();
+                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით წაიშალა");
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void UpdateCarManufacturer(int ID)
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    // Creates a SQL command
+                    using (var command = new SqlCommand("DELETE FROM dbo.Manufacturer WHERE MA_ID = " + ID + "", conn))
+                    {
+                        // Loads the query results into the table
+                        command.ExecuteReader();
+                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით წაიშალა");
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public static void AddNewCar()

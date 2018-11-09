@@ -51,6 +51,7 @@ namespace CarDealerApp
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
                 SqlCommand SqlComm = new SqlCommand(query, conn);
+            
                 // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
                 SqlComm.Parameters.Add("@img", SqlDbType.Image).Value = img;
 

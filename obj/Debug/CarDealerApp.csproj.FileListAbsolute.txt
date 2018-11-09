@@ -16,3 +16,5 @@ C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarM
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarEdit.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddNewCar.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddCarManufacturer.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddCarModel.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarManufacturerEdit.resources

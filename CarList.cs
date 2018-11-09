@@ -67,10 +67,26 @@ namespace CarDealerApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MyMethods.DeleteCar(RowID);
-            MyMethods.CarList(dataGridView1);
-            dataGridView1.Columns[0].Width = 24;
-            dataGridView1.ReadOnly = true;
+            try
+            {
+                if (RowID < 1)
+                {
+                    MessageBox.Show("გთხოვთ აირჩიოთ მანქანა!");
+                }
+                else
+                {
+                    MyMethods.DeleteCar(RowID);
+                    MyMethods.CarList(dataGridView1);
+                    dataGridView1.Columns[0].Width = 24;
+                    dataGridView1.ReadOnly = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
