@@ -77,7 +77,7 @@ namespace CarDealerApp
         {
             try
             {
-                if (RowID.Equals(""))
+                if (RowID < 1)
                 {
                     MessageBox.Show("გთხოვთ აირჩიოთ მანქანა!");
                 }
@@ -87,7 +87,6 @@ namespace CarDealerApp
                     ce.Show();
                     int idd;
                     Int32.TryParse(label1.Text.ToString(), out idd);
-                    //ce. = idd;
                 }
                                 
             }
@@ -95,6 +94,12 @@ namespace CarDealerApp
             {
                 MessageBox.Show(ex.Message);   
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddNewCar nc = new AddNewCar();
+            nc.Show();
         }
     }
 }

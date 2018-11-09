@@ -23,6 +23,22 @@ namespace CarDealerApp
         private void CarEdit_Load(object sender, EventArgs e)
         {
             textBoxID.Text = Getid.ToString();
+            comboBox1.Items.Add("item");
+            comboBox1.Items.Add("item2");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                label2.Text = comboBox1.Text;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
