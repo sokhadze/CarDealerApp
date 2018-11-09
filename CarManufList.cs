@@ -86,7 +86,7 @@ namespace CarDealerApp
                 }
                 else
                 {
-                    CarManufacturerEdit cme = new CarManufacturerEdit(int RowID);
+                    CarManufacturerEdit cme = new CarManufacturerEdit(RowID);
                     cme.Show();
                 }
 

@@ -20,8 +20,16 @@ namespace CarDealerApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int IDD = 
-            MyMethods.UpdateCarManufacturer(TextBoxID.Text)
+            try
+            {
+                int IDD;
+                Int32.TryParse(TextBoxID.Text, out IDD);
+                MyMethods.UpdateCarManufacturer(IDD, textBoxManName.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -150,7 +150,6 @@ namespace CarDealerApp
                     // Creates a SQL command
                     using (var command = new SqlCommand("DELETE FROM dbo.Car WHERE ID = "+ID+"", conn))
                     {
-                        // Loads the query results into the table
                         command.ExecuteReader();
                         MessageBox.Show("მანქნა წარმატებით წაიშალა");
                     }
@@ -175,7 +174,6 @@ namespace CarDealerApp
                     // Creates a SQL command
                     using (var command = new SqlCommand("DELETE FROM dbo.Manufacturer WHERE MA_ID = " + ID + "", conn))
                     {
-                        // Loads the query results into the table
                         command.ExecuteReader();
                         MessageBox.Show("მანქანის მწარმოებელი წარმატებით წაიშალა");
                     }
@@ -199,11 +197,11 @@ namespace CarDealerApp
                     conn.Open();
 
                     // Creates a SQL command
-                    using (var command = new SqlCommand("DELETE FROM dbo.Manufacturer WHERE MA_ID = " + ID + "", conn))
+                    using (var command = new SqlCommand("UPDATE Manufacturer(ManName) VALUES(@ManName) WHERE MA_ID = '" + ID +"'", conn))
                     {
-                        // Loads the query results into the table
+                        command.Parameters.AddWithValue("@ManName",_ManName);
                         command.ExecuteReader();
-                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით წაიშალა");
+                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით განახლდა!");
                     }
 
                     conn.Close();
