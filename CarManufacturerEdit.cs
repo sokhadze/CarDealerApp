@@ -22,9 +22,17 @@ namespace CarDealerApp
         {
             try
             {
-                int IDD;
-                Int32.TryParse(TextBoxID.Text, out IDD);
-                MyMethods.UpdateCarManufacturer(IDD, textBoxManName.Text);
+                if (textBoxManName.Text != "")
+                {
+                    int IDD;
+                    Int32.TryParse(TextBoxID.Text, out IDD);
+                    MyMethods.UpdateCarManufacturer(IDD, textBoxManName.Text);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("გთხოვთ შეავსოთ ცარიელი ველი");
+                }
             }
             catch (Exception ex)
             {
