@@ -12,9 +12,16 @@ namespace CarDealerApp
 {
     public partial class CarManufacturerEdit : Form
     {
-        public CarManufacturerEdit()
+        public CarManufacturerEdit(int ID)
         {
             InitializeComponent();
+            TextBoxID.Text = ID.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int IDD = 
+            MyMethods.UpdateCarManufacturer(TextBoxID.Text)
         }
     }
 }

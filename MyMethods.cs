@@ -189,7 +189,7 @@ namespace CarDealerApp
             }
         }
 
-        public static void UpdateCarManufacturer(int ID)
+        public static void UpdateCarManufacturer(int ID, string _ManName)
         {
             try
             {
