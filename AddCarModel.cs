@@ -22,13 +22,23 @@ namespace CarDealerApp
             List<CarManufClass> manuf = MyMethods.GetCarManufList();
             foreach (var item in manuf)
             {
-                comboBox.Items.Add(item.ManufcaturerName);
+                ComboBoxItem it = new ComboBoxItem();
+                it.Text = item.ManufcaturerName;
+                it.Value = item.MA_ID;
+
+                comboBox.Items.Add(it);
+
+                comboBox.SelectedIndex = 0;
             }
+            
+
+           // MessageBox.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //label3.Text = comboBox.Text;
+            label3.Text = (comboBox.SelectedItem as ComboBoxItem).Value.ToString();
         }
     }
 }
