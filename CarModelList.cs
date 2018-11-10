@@ -45,7 +45,7 @@ namespace CarDealerApp
             {
                 if (RowID < 1)
                 {
-                    MessageBox.Show("გთხოვთ აირჩიოთ მანქანის მწარმოებელი!");
+                    MessageBox.Show("გთხოვთ აირჩიოთ მანქანის მოდელი!");
                 }
                 else
                 {

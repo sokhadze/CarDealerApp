@@ -199,7 +199,7 @@ namespace CarDealerApp
                     using (var command = new SqlCommand("DELETE FROM dbo.Model WHERE M_ID = " + ID + "", conn))
                     {
                         command.ExecuteReader();
-                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით წაიშალა");
+                        MessageBox.Show("მანქანის მოდელი წარმატებით წაიშალა");
                     }
 
                     conn.Close();
