@@ -186,7 +186,30 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
+        public static void DeleteCarModel(int ID)
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
 
+                    // Creates a SQL command
+                    using (var command = new SqlCommand("DELETE FROM dbo.Model WHERE M_ID = " + ID + "", conn))
+                    {
+                        command.ExecuteReader();
+                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით წაიშალა");
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public static void UpdateCarManufacturer(int ID, string _ManName)
         {
             try
