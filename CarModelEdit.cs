@@ -10,28 +10,26 @@ using System.Windows.Forms;
 
 namespace CarDealerApp
 {
-    public partial class CarManufacturerEdit : Form
+    public partial class CarModelEdit : Form
     {
-        public CarManufacturerEdit(int ID)
+        public CarModelEdit(int id)
         {
             InitializeComponent();
-            TextBoxID.Text = ID.ToString();
+            RowID = id;
         }
+        int RowID;
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                if (textBoxManName.Text != "")
+                if (textBoxModelName.Text != "")
                 {
-                    int IDD;
-                    Int32.TryParse(TextBoxID.Text, out IDD);
-                    MyMethods.UpdateCarManufacturer(IDD, textBoxManName.Text);
-                    Close();
+                    MyMethods.UpdateCarModel(RowID, textBoxModelName.Text);
                 }
                 else
                 {
-                    MessageBox.Show("გთხოვთ შეავსოთ ცარიელი ველი");
+                    MessageBox.Show("გთხოვთ შეავსოთ ცარიელი ველები!");
                 }
             }
             catch (Exception ex)
@@ -40,9 +38,9 @@ namespace CarDealerApp
             }
         }
 
-        private void CarManufacturerEdit_Load(object sender, EventArgs e)
+        private void CarModelEdit_Load(object sender, EventArgs e)
         {
-
+            textBox1.Text = RowID.ToString();
         }
     }
 }

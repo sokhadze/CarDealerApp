@@ -251,23 +251,18 @@ namespace CarDealerApp
                     conn.Open();
 
                     // Creates a SQL command
-                    using (SqlCommand sqlComm = new SqlCommand("UPDATE Manufacturer SET ManName = @ManName WHERE MA_ID = @ID", conn))
+                    using (SqlCommand sqlComm = new SqlCommand("UPDATE Model SET ManName = @ManName WHERE MA_ID = @ID", conn))
                     {
                         sqlComm.Parameters.AddWithValue("@ManName", _ManName);
                         sqlComm.Parameters.AddWithValue("@ID", ID);
                         sqlComm.ExecuteNonQuery();
-                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით განახლდა!");
-
+                        MessageBox.Show("მანქანის მოდელი წარმატებით განახლდა!");
                     }
-
                     conn.Close();
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error!");
-
                 MessageBox.Show(ex.Message);
             }
         }

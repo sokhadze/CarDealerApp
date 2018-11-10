@@ -74,7 +74,24 @@ namespace CarDealerApp
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (RowID < 1)
+                {
+                    MessageBox.Show("გთხოვთ აირჩიოთ მანქანის მწარმოებელი!");
+                }
+                else
+                {
+                    CarModelEdit cme = new CarModelEdit(RowID);
+                    cme.Show();
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

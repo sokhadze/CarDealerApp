@@ -90,6 +90,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CarManufacturerEdit";
             this.Text = "CarManufacturerEdit";
+            this.Load += new System.EventHandler(this.CarManufacturerEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,3 +18,4 @@ C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddN
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddCarManufacturer.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddCarModel.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarManufacturerEdit.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarModelEdit.resources
