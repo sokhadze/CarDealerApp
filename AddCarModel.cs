@@ -16,7 +16,7 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
-
+        int id;
         private void AddCarModel_Load(object sender, EventArgs e)
         {
             List<CarManufClass> manuf = MyMethods.GetCarManufList();
@@ -30,15 +30,27 @@ namespace CarDealerApp
 
                 comboBox.SelectedIndex = 0;
             }
-            
-
-           // MessageBox.Show();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label3.Text = (comboBox.SelectedItem as ComboBoxItem).Value.ToString();
+            Int32.TryParse((comboBox.SelectedItem as ComboBoxItem).Value.ToString(), out id);
+            try
+            {
+                if (textBoxModel.Text != "")
+                {
+                    MyMethods.AddNewCarModel(id, textBoxModel.Text);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("გთხოვთ შეიყვანოთ მოდელის სახელი!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

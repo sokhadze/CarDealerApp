@@ -273,7 +273,7 @@ namespace CarDealerApp
         }
 
 
-        public static void AddNewCarModel(string _ManufName, string model)
+        public static void AddNewCarModel(int _ManufID, string model)
         {
             try
             {
@@ -281,13 +281,12 @@ namespace CarDealerApp
                 string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
                 SqlConnection conn = new SqlConnection(ConnString);
 
-                string query = "INSERT INTO Model(ModelName, Manufacturer_ID) VALUES( N'@ModelName','ManufName')";
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
-                SqlCommand SqlComm = new SqlCommand(query, conn);
 
+                string query = "INSERT INTO Model(ModelName, Manufacturer_ID) VALUES(@ModelName,'" + _ManufID + "')";
+                SqlCommand SqlComm = new SqlCommand(query, conn);
                 // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
-                SqlComm.Parameters.AddWithValue("@ManufName", _ManufName);
                 SqlComm.Parameters.AddWithValue("@ModelName", model);
 
                 int x = SqlComm.ExecuteNonQuery();
@@ -296,7 +295,6 @@ namespace CarDealerApp
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
