@@ -91,7 +91,7 @@
             // addNewCarToolStripMenuItem
             // 
             this.addNewCarToolStripMenuItem.Name = "addNewCarToolStripMenuItem";
-            this.addNewCarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewCarToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.addNewCarToolStripMenuItem.Text = "Add New Car";
             // 
             // addNewCarTypeToolStripMenuItem
@@ -100,7 +100,7 @@
             this.addNewCarTypesToolStripMenuItem,
             this.carTypesListToolStripMenuItem});
             this.addNewCarTypeToolStripMenuItem.Name = "addNewCarTypeToolStripMenuItem";
-            this.addNewCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewCarTypeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.addNewCarTypeToolStripMenuItem.Text = "Car Types";
             this.addNewCarTypeToolStripMenuItem.Click += new System.EventHandler(this.addNewCarTypeToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             this.addNewCarManufacturerToolStripMenuItem,
             this.carManufacturerListToolStripMenuItem});
             this.carManufacturerToolStripMenuItem.Name = "carManufacturerToolStripMenuItem";
-            this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.carManufacturerToolStripMenuItem.Text = "Car Manufacturer";
             // 
             // addNewCarManufacturerToolStripMenuItem
@@ -147,7 +147,7 @@
             this.addNewCarModelToolStripMenuItem,
             this.carModelListToolStripMenuItem});
             this.carModelToolStripMenuItem.Name = "carModelToolStripMenuItem";
-            this.carModelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carModelToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.carModelToolStripMenuItem.Text = "Car Model";
             // 
             // addNewCarModelToolStripMenuItem
@@ -266,8 +266,8 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Menu;
-            this.button2.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.BackgroundImage = global::CarDealerApp.Properties.Resources.users;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -282,7 +282,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Menu;
-            this.button1.BackgroundImage = global::CarDealerApp.Properties.Resources.if_red_64_67532;
+            this.button1.BackgroundImage = global::CarDealerApp.Properties.Resources.sell;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;

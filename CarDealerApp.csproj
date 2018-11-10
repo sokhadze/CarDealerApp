@@ -230,6 +230,7 @@
     <Content Include="Resources\CarTypes\SUV.png" />
     <Content Include="Resources\CarTypes\truck.png" />
     <Content Include="Resources\CarTypes\van.png" />
+    <None Include="Resources\sell.png" />
     <None Include="Resources\if_red_64_67532.png" />
   </ItemGroup>
   <ItemGroup>

@@ -210,6 +210,7 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
+
         public static void UpdateCarManufacturer(int ID, string _ManName)
         {
             try
@@ -226,11 +227,41 @@ namespace CarDealerApp
                         sqlComm.Parameters.AddWithValue("@ID", ID);
                         sqlComm.ExecuteNonQuery();
                         MessageBox.Show("მანქანის მწარმოებელი წარმატებით განახლდა!");
-                        
+
                     }
 
                     conn.Close();
-                    
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error!");
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void UpdateCarModel(int ID, string _ManName)
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    // Creates a SQL command
+                    using (SqlCommand sqlComm = new SqlCommand("UPDATE Manufacturer SET ManName = @ManName WHERE MA_ID = @ID", conn))
+                    {
+                        sqlComm.Parameters.AddWithValue("@ManName", _ManName);
+                        sqlComm.Parameters.AddWithValue("@ID", ID);
+                        sqlComm.ExecuteNonQuery();
+                        MessageBox.Show("მანქანის მწარმოებელი წარმატებით განახლდა!");
+
+                    }
+
+                    conn.Close();
+
                 }
             }
             catch (Exception ex)
@@ -241,6 +272,34 @@ namespace CarDealerApp
             }
         }
 
+
+        public static void AddNewCarModel(string _ManufName, string model)
+        {
+            try
+            {
+
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(ConnString);
+
+                string query = "INSERT INTO Model(ModelName, Manufacturer_ID) VALUES( N'@ModelName','ManufName')";
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                SqlCommand SqlComm = new SqlCommand(query, conn);
+
+                // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
+                SqlComm.Parameters.AddWithValue("@ManufName", _ManufName);
+                SqlComm.Parameters.AddWithValue("@ModelName", model);
+
+                int x = SqlComm.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show(x.ToString() + " მანქანის ტიპი წარმატებით დაემატა!");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         public static void AddNewCar()
         {
 

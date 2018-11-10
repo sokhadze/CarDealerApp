@@ -59,5 +59,22 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = MyMethods.GetCarModelList();
+            dataGridView1.Columns[0].Width = 26;
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            AddCarModel acm = new AddCarModel();
+            acm.Show();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

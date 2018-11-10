@@ -72,6 +72,7 @@
             this.EditBtn.TabIndex = 3;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // AddBtn
             // 
@@ -81,6 +82,7 @@
             this.AddBtn.TabIndex = 4;
             this.AddBtn.Text = "Add Model";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // refreshBtn
             // 
@@ -90,6 +92,7 @@
             this.refreshBtn.TabIndex = 5;
             this.refreshBtn.Text = "Refresh";
             this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // CarModelList
             // 
