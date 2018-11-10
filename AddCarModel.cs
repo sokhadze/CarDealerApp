@@ -19,12 +19,11 @@ namespace CarDealerApp
 
         private void AddCarModel_Load(object sender, EventArgs e)
         {
-            comboBox.Items.Add("Mahesh Chand");
-            comboBox.Items.Add("Mike Gold");
-            comboBox.Items.Add("Praveen Kumar");
-            comboBox.Items.Add("Raj Beniwal");
-          
-
+            List<CarManufClass> manuf = MyMethods.GetCarManufList();
+            foreach (var item in manuf)
+            {
+                comboBox.Items.Add(item.ManufcaturerName);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

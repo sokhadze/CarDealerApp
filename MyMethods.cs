@@ -292,7 +292,7 @@ namespace CarDealerApp
 
                 int x = SqlComm.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show(x.ToString() + " მანქანის ტიპი წარმატებით დაემატა!");
+                MessageBox.Show(x.ToString() + " მანქანის მოდელი წარმატებით დაემატა!");
             }
             catch (Exception ex)
             {
