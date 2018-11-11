@@ -91,10 +91,12 @@ namespace CarDealerApp
             ul.Show();
         }
 
-        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+
+  
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddNewUser anu = new AddNewUser();
-            anu.Show();
+
         }
     }
 }

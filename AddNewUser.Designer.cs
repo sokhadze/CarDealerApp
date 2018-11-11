@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxfName = new System.Windows.Forms.TextBox();
+            this.textBoxlName = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -45,6 +45,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Add New User";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -73,19 +74,19 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "მობილურის ნომ.";
             // 
-            // textBox1
+            // textBoxfName
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBoxfName.Location = new System.Drawing.Point(113, 18);
+            this.textBoxfName.Name = "textBoxfName";
+            this.textBoxfName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxfName.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxlName
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBoxlName.Location = new System.Drawing.Point(113, 44);
+            this.textBoxlName.Name = "textBoxlName";
+            this.textBoxlName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxlName.TabIndex = 5;
             // 
             // textBox3
             // 
@@ -101,8 +102,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(227, 138);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxlName);
+            this.Controls.Add(this.textBoxfName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -120,8 +121,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxfName;
+        private System.Windows.Forms.TextBox textBoxlName;
         private System.Windows.Forms.TextBox textBox3;
     }
 }

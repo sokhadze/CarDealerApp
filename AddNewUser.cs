@@ -25,5 +25,25 @@ namespace CarDealerApp
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox3.Text == "" || textBoxfName.Text == "" || textBoxlName.Text == "")
+                {
+                    MessageBox.Show("გთხოვთ შეავსოთ ცარიელი ველები");
+                }
+                else
+                {
+                    MyMethods.AddNewUser(textBoxfName.Text,textBoxlName.Text,textBox3.Text);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

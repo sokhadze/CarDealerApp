@@ -42,11 +42,6 @@
             this.carModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCarModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carModelListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.getAllUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
@@ -63,7 +58,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.carToolStripMenuItem,
-            this.userToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -163,43 +157,6 @@
             this.carModelListToolStripMenuItem.Text = "Car Model List";
             this.carModelListToolStripMenuItem.Click += new System.EventHandler(this.carModelListToolStripMenuItem_Click);
             // 
-            // userToolStripMenuItem
-            // 
-            this.userToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.editUserToolStripMenuItem,
-            this.deleteUsersToolStripMenuItem,
-            this.getAllUserToolStripMenuItem});
-            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.userToolStripMenuItem.Text = "User";
-            // 
-            // addNewUserToolStripMenuItem
-            // 
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addNewUserToolStripMenuItem.Text = "Add New User";
-            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
-            // 
-            // editUserToolStripMenuItem
-            // 
-            this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editUserToolStripMenuItem.Text = "Edit Users";
-            this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
-            // 
-            // deleteUsersToolStripMenuItem
-            // 
-            this.deleteUsersToolStripMenuItem.Name = "deleteUsersToolStripMenuItem";
-            this.deleteUsersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteUsersToolStripMenuItem.Text = "Delete Users";
-            // 
-            // getAllUserToolStripMenuItem
-            // 
-            this.getAllUserToolStripMenuItem.Name = "getAllUserToolStripMenuItem";
-            this.getAllUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.getAllUserToolStripMenuItem.Text = "Get All User";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -211,8 +168,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // button3
             // 
@@ -347,7 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem addNewCarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCarTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCarTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carTypesListToolStripMenuItem;
@@ -358,10 +315,6 @@
         private System.Windows.Forms.ToolStripMenuItem carModelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCarModelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carModelListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem getAllUserToolStripMenuItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

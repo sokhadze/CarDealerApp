@@ -235,6 +235,30 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
+        public static void DeleteUser(int ID)
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    // Creates a SQL command
+                    using (var command = new SqlCommand("DELETE FROM dbo.Users WHERE User_ID = " + ID + "", conn))
+                    {
+                        command.ExecuteReader();
+                        MessageBox.Show("მომხმარებელი წარმატებით წაიშალა");
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         public static void UpdateCarManufacturer(int ID, string _ManName)
         {
@@ -266,7 +290,7 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
-        public static void UpdateCarModel(int ID, string _ManName)
+        public static void UpdateCarModel(int ID, string _ModelName)
         {
             try
             {
@@ -278,10 +302,37 @@ namespace CarDealerApp
                     // Creates a SQL command
                     using (SqlCommand sqlComm = new SqlCommand("UPDATE Model SET ModelName = @ModelName WHERE M_ID = @ID", conn))
                     {
-                        sqlComm.Parameters.AddWithValue("@ModelName", _ManName);
+                        sqlComm.Parameters.AddWithValue("@ModelName", _ModelName);
                         sqlComm.Parameters.AddWithValue("@ID", ID);
                         sqlComm.ExecuteNonQuery();
                         MessageBox.Show("მანქანის მოდელი წარმატებით განახლდა!");
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void UpdateUser(int ID, string _FirstName, string _LastName, string _Phone)
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    // Creates a SQL command
+                    using (SqlCommand sqlComm = new SqlCommand("UPDATE Users SET FirstName = @FirstName, LastName = @LastName, Phone = @Phone WHERE User_ID = @ID", conn))
+                    {
+                        sqlComm.Parameters.AddWithValue("@FirstName", _FirstName);
+                        sqlComm.Parameters.AddWithValue("@LastName", _LastName);
+                        sqlComm.Parameters.AddWithValue("@Phone", _Phone);
+                        sqlComm.Parameters.AddWithValue("@ID", ID);
+                        sqlComm.ExecuteNonQuery();
+                        MessageBox.Show("მომხმარებელი წარმატებით განახლდა!");
                     }
                     conn.Close();
                 }
