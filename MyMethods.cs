@@ -402,7 +402,7 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
-        public static void AddNewCar(int _ManufID, int _ModelID, int _TypeID, int _Condition, DateTime _RYear, float _OdoMeter, float _Engine, float _Price)
+        public static void AddNewCar(int _ManufID, int _ModelID, int _TypeID, int _Condition, String _RYear, float _OdoMeter, float _Engine, float _Price)
         {
             try
             {
@@ -413,11 +413,10 @@ namespace CarDealerApp
                 if (conn.State != ConnectionState.Open)
                     conn.Open();
 
-                string query = "INSERT INTO Car(FirstName, LastName, Phone) VALUES(@fName,@lName,@Phone)";
+                string query = "INSERT INTO Car(Manufacturer_ID,Model_ID,CarType_ID,Price,Condition,Year,OdoMeter,Engine)" +
+                    " VALUES("+_ManufID+","+_ModelID+","+_TypeID+","+_Price+","+_Condition+",'"+_RYear+"',"+_OdoMeter+","+_Engine+")";
                 SqlCommand SqlComm = new SqlCommand(query, conn);
-               // SqlComm.Parameters.AddWithValue("@fName", _fName);
-               // SqlComm.Parameters.AddWithValue("@lName", _lName);
-               // SqlComm.Parameters.AddWithValue("@Phone", _Phone);
+               
 
                 int x = SqlComm.ExecuteNonQuery();
                 conn.Close();

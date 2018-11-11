@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,12 +83,16 @@ namespace CarDealerApp
                 int model_id;
                 int type_id;
                 int condition;
+                float odometer = float.Parse(textBoxOdometer.Text, CultureInfo.InvariantCulture);
+                float engine = float.Parse(textBoxEngine.Text, CultureInfo.InvariantCulture);
+                float price = float.Parse(textBoxPrice.Text, CultureInfo.InvariantCulture);
                 Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
                 Int32.TryParse((comboBoxCarModel.SelectedItem as ComboBoxItem).Value.ToString(), out model_id);
                 Int32.TryParse((comboBoxCarType.SelectedItem as ComboBoxItem).Value.ToString(), out type_id);
                 Int32.TryParse((comboBoxCondition.SelectedItem as ComboBoxItem).Value.ToString(), out condition);
-                Console.WriteLine(this.manuf_id + "|" + model_id + "|" + type_id + "|" + dateTimePicker1.Value.ToString("yyyy-MM-dd"));
-                //MyMethods.AddNewCar(this.manuf_id, model_id, type_id, condition, dateTimePicker1.Value.ToString() ,textBoxOdometer.Text,textBoxEngine,textBoxPrice);
+                string dt = dateTimePicker1.Value.ToShortDateString();
+                Console.WriteLine(this.manuf_id + "|" + price + "|" + engine + "|" + odometer);
+                MyMethods.AddNewCar(this.manuf_id, model_id, type_id, condition, dt, odometer, engine, price);
             }
             catch (Exception ex)
             {
