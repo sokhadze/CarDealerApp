@@ -36,7 +36,18 @@ namespace CarDealerApp
                 comboBoxCarManuf.Items.Add(it);
                 comboBoxCarManuf.SelectedIndex = 0;
             }
+            Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
 
+            List<CarModelListClass2> model = MyMethods.GetCarModelListMa(manuf_id);
+            foreach (var item in model)
+            {
+                ComboBoxItem it2 = new ComboBoxItem();
+                it2.Text = item.ModelName;
+                it2.Value = item.M_ID;
+
+                comboBoxCarModel.Items.Add(it2);
+                comboBoxCarModel.SelectedIndex = 0;
+            }
 
             //car type combo box
             List<CarTypeListClass> type = MyMethods.GetCarTypeList();
@@ -69,7 +80,7 @@ namespace CarDealerApp
         {
             Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
 
-            Console.WriteLine(comboBoxCarManuf.Text +"|"+ comboBoxCarModel.Text + "|" + comboBoxCarType.Text + "|" + comboBoxCondition.Text);
+            Console.WriteLine(comboBoxCarManuf.SelectedIndex +"|"+ comboBoxCarModel.SelectedIndex + "|" + comboBoxCarType.SelectedIndex + "|" + comboBoxCondition.SelectedIndex);
         }
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
@@ -103,16 +114,11 @@ namespace CarDealerApp
 
         private void comboBoxCarManuf_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
-
-        }
-
-        private void comboBoxCarModel_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            comboBoxCarModel.Items.Clear();
             int man_id;
-            Int32.TryParse(comboBoxCarManuf.Text, out man_id);
+            Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out man_id);
 
-            List<CarModelListClass2> model = MyMethods.GetCarModelListMa(manuf_id);
+            List<CarModelListClass2> model = MyMethods.GetCarModelListMa(man_id);
             foreach (var item in model)
             {
                 ComboBoxItem it2 = new ComboBoxItem();
@@ -122,6 +128,12 @@ namespace CarDealerApp
                 comboBoxCarModel.Items.Add(it2);
                 comboBoxCarModel.SelectedIndex = 0;
             }
+
+        }
+
+        private void comboBoxCarModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void comboBoxCarModel_TextUpdate(object sender, EventArgs e)
