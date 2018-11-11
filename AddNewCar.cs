@@ -17,9 +17,7 @@ namespace CarDealerApp
             InitializeComponent();
         }
         int manuf_id;
-        int model_id;
-        int type_id;
-        int condition;
+
         private void AddNewCar_Load(object sender, EventArgs e)
         {
             //date format
@@ -78,9 +76,16 @@ namespace CarDealerApp
 
         private void AddNewCarBtn_Click(object sender, EventArgs e)
         {
+            int manuf_id;
+            int model_id;
+            int type_id;
+            int condition;
             Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
+            Int32.TryParse((comboBoxCarModel.SelectedItem as ComboBoxItem).Value.ToString(), out model_id);
+            Int32.TryParse((comboBoxCarType.SelectedItem as ComboBoxItem).Value.ToString(), out type_id);
+            Int32.TryParse((comboBoxCondition.SelectedItem as ComboBoxItem).Value.ToString(), out condition);
 
-            Console.WriteLine(comboBoxCarManuf.SelectedIndex +"|"+ comboBoxCarModel.SelectedIndex + "|" + comboBoxCarType.SelectedIndex + "|" + comboBoxCondition.SelectedIndex);
+            Console.WriteLine(this.manuf_id +"|"+ model_id + "|" + type_id + "|" + condition);
         }
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
