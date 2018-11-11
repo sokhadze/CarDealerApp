@@ -177,26 +177,27 @@
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editUserToolStripMenuItem.Text = "Edit Users";
             this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
             // deleteUsersToolStripMenuItem
             // 
             this.deleteUsersToolStripMenuItem.Name = "deleteUsersToolStripMenuItem";
-            this.deleteUsersToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.deleteUsersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteUsersToolStripMenuItem.Text = "Delete Users";
             // 
             // getAllUserToolStripMenuItem
             // 
             this.getAllUserToolStripMenuItem.Name = "getAllUserToolStripMenuItem";
-            this.getAllUserToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.getAllUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getAllUserToolStripMenuItem.Text = "Get All User";
             // 
             // helpToolStripMenuItem
@@ -278,6 +279,7 @@
             this.button2.Text = "მომხმარებლების სია";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

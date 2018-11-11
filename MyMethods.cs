@@ -112,8 +112,8 @@ namespace CarDealerApp
                 return new List<CarModelListClass>();
             }
         }
-        
-        public static void CarList( DataGridView grid)
+
+        public static void CarList(DataGridView grid)
         {
             try
             {
@@ -127,6 +127,31 @@ namespace CarDealerApp
                     {
                         table.Load(command.ExecuteReader());
                         grid.DataSource = table;
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void UserList(DataGridView grid)
+        {
+            try
+            {
+                DataTable table = new DataTable();
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    using (var command = new SqlCommand("SELECT * FROM Users", conn))
+                    {
+                        table.Load(command.ExecuteReader());
+                        grid.DataSource = table;
+                        grid.Columns[0].Width = 22;
                     }
 
                     conn.Close();
@@ -296,6 +321,33 @@ namespace CarDealerApp
         public static void AddNewCar()
         {
 
+        }
+        public static void AddNewUser(string _fName, string _lName, string _Phone)
+        {
+            try
+            {
+
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(ConnString);
+
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                string query = "INSERT INTO Users(FirstName, LastName, Phone) VALUES(@fName,@lName,@Phone)";
+                SqlCommand SqlComm = new SqlCommand(query, conn);
+                // SqlComm.Parameters.Add(new SqlParameter("CarTypeImg", img));
+                SqlComm.Parameters.AddWithValue("@fName", _fName);
+                SqlComm.Parameters.AddWithValue("@lName", _lName);
+                SqlComm.Parameters.AddWithValue("@Phone", _Phone);
+
+                int x = SqlComm.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show(x.ToString() + " ახალი მომხამრებელი წარმატებით დაემატა!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

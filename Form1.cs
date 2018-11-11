@@ -84,5 +84,17 @@ namespace CarDealerApp
             AddCarManufacturer acm = new AddCarManufacturer();
             acm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UserList ul = new UserList();
+            ul.Show();
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewUser anu = new AddNewUser();
+            anu.Show();
+        }
     }
 }
