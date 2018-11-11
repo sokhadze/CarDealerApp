@@ -85,8 +85,9 @@
             // addNewCarToolStripMenuItem
             // 
             this.addNewCarToolStripMenuItem.Name = "addNewCarToolStripMenuItem";
-            this.addNewCarToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.addNewCarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewCarToolStripMenuItem.Text = "Add New Car";
+            this.addNewCarToolStripMenuItem.Click += new System.EventHandler(this.addNewCarToolStripMenuItem_Click);
             // 
             // addNewCarTypeToolStripMenuItem
             // 
@@ -94,7 +95,7 @@
             this.addNewCarTypesToolStripMenuItem,
             this.carTypesListToolStripMenuItem});
             this.addNewCarTypeToolStripMenuItem.Name = "addNewCarTypeToolStripMenuItem";
-            this.addNewCarTypeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.addNewCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewCarTypeToolStripMenuItem.Text = "Car Types";
             this.addNewCarTypeToolStripMenuItem.Click += new System.EventHandler(this.addNewCarTypeToolStripMenuItem_Click);
             // 
@@ -118,7 +119,7 @@
             this.addNewCarManufacturerToolStripMenuItem,
             this.carManufacturerListToolStripMenuItem});
             this.carManufacturerToolStripMenuItem.Name = "carManufacturerToolStripMenuItem";
-            this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.carManufacturerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.carManufacturerToolStripMenuItem.Text = "Car Manufacturer";
             // 
             // addNewCarManufacturerToolStripMenuItem
@@ -141,7 +142,7 @@
             this.addNewCarModelToolStripMenuItem,
             this.carModelListToolStripMenuItem});
             this.carModelToolStripMenuItem.Name = "carModelToolStripMenuItem";
-            this.carModelToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.carModelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.carModelToolStripMenuItem.Text = "Car Model";
             // 
             // addNewCarModelToolStripMenuItem
