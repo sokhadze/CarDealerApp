@@ -50,6 +50,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.CarList = new System.Windows.Forms.Button();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,8 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -102,14 +105,14 @@
             // addNewCarTypesToolStripMenuItem
             // 
             this.addNewCarTypesToolStripMenuItem.Name = "addNewCarTypesToolStripMenuItem";
-            this.addNewCarTypesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.addNewCarTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewCarTypesToolStripMenuItem.Text = "Add New Car Types";
             this.addNewCarTypesToolStripMenuItem.Click += new System.EventHandler(this.addNewCarTypesToolStripMenuItem_Click);
             // 
             // carTypesListToolStripMenuItem
             // 
             this.carTypesListToolStripMenuItem.Name = "carTypesListToolStripMenuItem";
-            this.carTypesListToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.carTypesListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.carTypesListToolStripMenuItem.Text = "Car Types List";
             this.carTypesListToolStripMenuItem.Click += new System.EventHandler(this.carTypesListToolStripMenuItem_Click);
             // 
@@ -273,6 +276,13 @@
             this.CarList.UseVisualStyleBackColor = false;
             this.CarList.Click += new System.EventHandler(this.CarList_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,6 +330,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

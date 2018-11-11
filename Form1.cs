@@ -101,5 +101,10 @@ namespace CarDealerApp
             AddNewCar nc = new AddNewCar();
             nc.Show();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
