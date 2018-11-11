@@ -76,16 +76,23 @@ namespace CarDealerApp
 
         private void AddNewCarBtn_Click(object sender, EventArgs e)
         {
-            int manuf_id;
-            int model_id;
-            int type_id;
-            int condition;
-            Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
-            Int32.TryParse((comboBoxCarModel.SelectedItem as ComboBoxItem).Value.ToString(), out model_id);
-            Int32.TryParse((comboBoxCarType.SelectedItem as ComboBoxItem).Value.ToString(), out type_id);
-            Int32.TryParse((comboBoxCondition.SelectedItem as ComboBoxItem).Value.ToString(), out condition);
-
-            Console.WriteLine(this.manuf_id +"|"+ model_id + "|" + type_id + "|" + condition);
+            try
+            {
+                int manuf_id;
+                int model_id;
+                int type_id;
+                int condition;
+                Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
+                Int32.TryParse((comboBoxCarModel.SelectedItem as ComboBoxItem).Value.ToString(), out model_id);
+                Int32.TryParse((comboBoxCarType.SelectedItem as ComboBoxItem).Value.ToString(), out type_id);
+                Int32.TryParse((comboBoxCondition.SelectedItem as ComboBoxItem).Value.ToString(), out condition);
+                Console.WriteLine(this.manuf_id + "|" + model_id + "|" + type_id + "|" + dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                //MyMethods.AddNewCar(this.manuf_id, model_id, type_id, condition, dateTimePicker1.Value.ToString() ,textBoxOdometer.Text,textBoxEngine,textBoxPrice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)

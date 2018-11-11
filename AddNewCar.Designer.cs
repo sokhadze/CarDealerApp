@@ -33,11 +33,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxOdometer = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxEngine = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.AddNewCarBtn = new System.Windows.Forms.Button();
             this.comboBoxCarManuf = new System.Windows.Forms.ComboBox();
@@ -92,13 +92,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "გამოშვების წელი";
             // 
-            // textBox6
+            // textBoxOdometer
             // 
-            this.textBox6.Location = new System.Drawing.Point(137, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 20);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
+            this.textBoxOdometer.Location = new System.Drawing.Point(137, 161);
+            this.textBoxOdometer.Name = "textBoxOdometer";
+            this.textBoxOdometer.Size = new System.Drawing.Size(121, 20);
+            this.textBoxOdometer.TabIndex = 11;
+            this.textBoxOdometer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // label6
             // 
@@ -109,14 +109,14 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "გარბენი";
             // 
-            // textBox7
+            // textBoxEngine
             // 
-            this.textBox7.Location = new System.Drawing.Point(137, 187);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 20);
-            this.textBox7.TabIndex = 13;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            this.textBoxEngine.Location = new System.Drawing.Point(137, 187);
+            this.textBoxEngine.Name = "textBoxEngine";
+            this.textBoxEngine.Size = new System.Drawing.Size(121, 20);
+            this.textBoxEngine.TabIndex = 13;
+            this.textBoxEngine.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBoxEngine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // label7
             // 
@@ -127,13 +127,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "ძრავის მოცულობა";
             // 
-            // textBox8
+            // textBoxPrice
             // 
-            this.textBox8.Location = new System.Drawing.Point(137, 213);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 15;
-            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
+            this.textBoxPrice.Location = new System.Drawing.Point(137, 213);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPrice.TabIndex = 15;
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 
             // label8
             // 
@@ -199,6 +199,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "MM-dd-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(137, 135);
             this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -217,11 +218,11 @@
             this.Controls.Add(this.comboBoxCarModel);
             this.Controls.Add(this.comboBoxCarManuf);
             this.Controls.Add(this.AddNewCarBtn);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBoxEngine);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxOdometer);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -243,11 +244,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxOdometer;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxEngine;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button AddNewCarBtn;
         private System.Windows.Forms.ComboBox comboBoxCarManuf;
