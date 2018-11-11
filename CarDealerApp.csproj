@@ -257,6 +257,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\addcar.png" />
     <Content Include="Resources\CarTypes\beetle.png" />
     <Content Include="Resources\CarTypes\cabriolet.png" />
     <Content Include="Resources\CarTypes\city-car.png" />

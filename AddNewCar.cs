@@ -19,7 +19,31 @@ namespace CarDealerApp
 
         private void AddNewCar_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format= DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            //manufacturer combo box
+            List<CarManufClass> manuf = MyMethods.GetCarManufList();
+            foreach (var item in manuf)
+            {
+                ComboBoxItem it = new ComboBoxItem();
+                it.Text = item.ManufcaturerName;
+                it.Value = item.MA_ID;
 
+                comboBoxCarManuf.Items.Add(it);
+                comboBoxCarManuf.SelectedIndex = 0;
+            }
+            //model combo box
+            List<CarModelListClass> model = MyMethods.GetCarModelList();
+            foreach (var item in model)
+            {
+                ComboBoxItem it2 = new ComboBoxItem();
+                it2.Text = item.ModelName;
+                it2.Value = item.M_ID;
+
+                comboBoxCarModel.Items.Add(it2);
+
+                comboBoxCarModel.SelectedIndex = 0;
+            }
         }
 
         private void AddNewCarBtn_Click(object sender, EventArgs e)
@@ -54,6 +78,11 @@ namespace CarDealerApp
             {
                 e.Handled = true;
             }
+        }
+
+        private void comboBoxCarManuf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

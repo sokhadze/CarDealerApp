@@ -162,6 +162,7 @@
             this.comboBoxCarManuf.Name = "comboBoxCarManuf";
             this.comboBoxCarManuf.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCarManuf.TabIndex = 17;
+            this.comboBoxCarManuf.SelectedIndexChanged += new System.EventHandler(this.comboBoxCarManuf_SelectedIndexChanged);
             // 
             // comboBoxCarModel
             // 
@@ -192,6 +193,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "MM-dd-yyyy";
             this.dateTimePicker1.Location = new System.Drawing.Point(137, 135);
             this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
