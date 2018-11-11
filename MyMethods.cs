@@ -112,7 +112,7 @@ namespace CarDealerApp
                 return new List<CarModelListClass>();
             }
         }
-        public static List<CarModelListClass> GetCarModelListMa(int ma_id)
+        public static List<CarModelListClass2> GetCarModelListMa(int ma_id)
         {
             try
             {
@@ -128,12 +128,13 @@ namespace CarDealerApp
                     dt.Load(dr);
                 }
 
-                List<CarModelListClass> ls = (from c in dt.AsEnumerable()
-                                              select new CarModelListClass
+                List<CarModelListClass2> ls = (from c in dt.AsEnumerable()
+                                              select new CarModelListClass2
                                               {
                                                   M_ID = c.Field<int>("M_ID"),
                                                   ModelName = c.Field<string>("ModelName"),
-                                                  ManName = c.Field<string>("ManName")
+                                                  ManName = c.Field<string>("ManName"),
+                                                  MA_ID = c.Field<int>("MA_ID")
                                               }).ToList();
 
                 return ls;
@@ -141,7 +142,7 @@ namespace CarDealerApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return new List<CarModelListClass>();
+                return new List<CarModelListClass2>();
             }
         }
 

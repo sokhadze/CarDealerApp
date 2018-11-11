@@ -32,6 +32,14 @@ namespace CarDealerApp
         public string ManName { get; set; }
     }
 
+    public class CarModelListClass2
+    {
+        public int M_ID { get; set; }
+        public string ModelName { get; set; }
+        public string ManName { get; set; }
+        public int MA_ID { get; set; }
+    }
+
     public class ComboBoxItem
     {
         public string Text { get; set; }
