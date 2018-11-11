@@ -121,7 +121,7 @@ namespace CarDealerApp
                 using (SqlConnection conn = new SqlConnection(ConnString))
                 {
                     SqlCommand sqlComm = conn.CreateCommand();
-                    sqlComm.CommandText = "SELECT M_ID, ModelName, ManName FROM [CarDealerDB].[dbo].[Model] INNER JOIN CarDealerDB.dbo.Manufacturer c ON c.MA_ID = Model.Manufacturer_ID ";
+                    sqlComm.CommandText = "SELECT M_ID, ModelName, ManName, MA_ID FROM [CarDealerDB].[dbo].[Model] INNER JOIN CarDealerDB.dbo.Manufacturer c ON c.MA_ID = Model.Manufacturer_ID where MA_ID = "+ma_id+"  ";
                     conn.Open();
 
                     SqlDataReader dr = sqlComm.ExecuteReader();

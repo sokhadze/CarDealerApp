@@ -163,6 +163,8 @@
             this.comboBoxCarManuf.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCarManuf.TabIndex = 17;
             this.comboBoxCarManuf.SelectedIndexChanged += new System.EventHandler(this.comboBoxCarManuf_SelectedIndexChanged);
+            this.comboBoxCarManuf.Click += new System.EventHandler(this.comboBoxCarManuf_Click);
+            this.comboBoxCarManuf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxCarManuf_KeyPress);
             // 
             // comboBoxCarModel
             // 
@@ -172,6 +174,8 @@
             this.comboBoxCarModel.Name = "comboBoxCarModel";
             this.comboBoxCarModel.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCarModel.TabIndex = 18;
+            this.comboBoxCarModel.SelectedIndexChanged += new System.EventHandler(this.comboBoxCarModel_SelectedIndexChanged);
+            this.comboBoxCarModel.TextUpdate += new System.EventHandler(this.comboBoxCarModel_TextUpdate);
             // 
             // comboBoxCarType
             // 
@@ -181,6 +185,7 @@
             this.comboBoxCarType.Name = "comboBoxCarType";
             this.comboBoxCarType.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCarType.TabIndex = 19;
+            this.comboBoxCarType.SelectedIndexChanged += new System.EventHandler(this.comboBoxCarType_SelectedIndexChanged);
             // 
             // comboBoxCondition
             // 

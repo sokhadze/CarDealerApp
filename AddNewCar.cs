@@ -16,9 +16,13 @@ namespace CarDealerApp
         {
             InitializeComponent();
         }
-
+        int manuf_id;
+        int model_id;
+        int type_id;
+        int condition;
         private void AddNewCar_Load(object sender, EventArgs e)
         {
+            //date format
             dateTimePicker1.Format= DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
             //manufacturer combo box
@@ -32,23 +36,30 @@ namespace CarDealerApp
                 comboBoxCarManuf.Items.Add(it);
                 comboBoxCarManuf.SelectedIndex = 0;
             }
+            Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out manuf_id);
+
             //model combo box
-            List<CarModelListClass> model = MyMethods.GetCarModelList();
-            foreach (var item in model)
+
+            //car type combo box
+            List<CarTypeListClass> type = MyMethods.GetCarTypeList();
+            foreach (var item in type)
             {
                 ComboBoxItem it2 = new ComboBoxItem();
-                it2.Text = item.ModelName;
-                it2.Value = item.M_ID;
+                it2.Text = item.CarTypeName;
+                it2.Value = item.T_ID;
 
-                comboBoxCarModel.Items.Add(it2);
-
-                comboBoxCarModel.SelectedIndex = 0;
+                comboBoxCarType.Items.Add(it2);
+                comboBoxCarType.SelectedIndex = 0;
             }
+            Int32.TryParse((comboBoxCarManuf.SelectedItem as ComboBoxItem).Value.ToString(), out type_id);
+
         }
+
+       
 
         private void AddNewCarBtn_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine(manuf_id +"|"+ model_id + "|" +type_id + "|" +condition );
         }
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,6 +94,41 @@ namespace CarDealerApp
         private void comboBoxCarManuf_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void comboBoxCarModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBoxCarModel_TextUpdate(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBoxCarManuf_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBoxCarManuf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //model combo box
+            List<CarModelListClass> model = MyMethods.GetCarModelListMa(manuf_id);
+            foreach (var item in model)
+            {
+                ComboBoxItem it2 = new ComboBoxItem();
+                it2.Text = item.ModelName;
+                it2.Value = item.M_ID;
+
+                comboBoxCarModel.Items.Add(it2);
+                comboBoxCarModel.SelectedIndex = 0;
+            }
+        }
+
+        private void comboBoxCarType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -27,7 +27,6 @@ namespace CarDealerApp
                 it.Value = item.MA_ID;
 
                 comboBox.Items.Add(it);
-
                 comboBox.SelectedIndex = 0;
             }
         }
