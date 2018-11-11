@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.textBoxFName = new System.Windows.Forms.TextBox();
+            this.textBoxLName = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -75,34 +75,34 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "ტელ ნომ.";
             // 
-            // textBox1
+            // textBoxID
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(119, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBoxID.Location = new System.Drawing.Point(86, 27);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.ReadOnly = true;
+            this.textBoxID.Size = new System.Drawing.Size(119, 20);
+            this.textBoxID.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxFName
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(119, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBoxFName.Location = new System.Drawing.Point(86, 53);
+            this.textBoxFName.Name = "textBoxFName";
+            this.textBoxFName.Size = new System.Drawing.Size(119, 20);
+            this.textBoxFName.TabIndex = 5;
             // 
-            // textBox3
+            // textBoxLName
             // 
-            this.textBox3.Location = new System.Drawing.Point(86, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(119, 20);
-            this.textBox3.TabIndex = 6;
+            this.textBoxLName.Location = new System.Drawing.Point(86, 79);
+            this.textBoxLName.Name = "textBoxLName";
+            this.textBoxLName.Size = new System.Drawing.Size(119, 20);
+            this.textBoxLName.TabIndex = 6;
             // 
-            // textBox4
+            // textBoxPhone
             // 
-            this.textBox4.Location = new System.Drawing.Point(86, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(119, 20);
-            this.textBox4.TabIndex = 7;
+            this.textBoxPhone.Location = new System.Drawing.Point(86, 105);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(119, 20);
+            this.textBoxPhone.TabIndex = 7;
             // 
             // button1
             // 
@@ -112,6 +112,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserEdit
             // 
@@ -119,10 +120,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(236, 177);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPhone);
+            this.Controls.Add(this.textBoxLName);
+            this.Controls.Add(this.textBoxFName);
+            this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -141,10 +142,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.TextBox textBoxFName;
+        private System.Windows.Forms.TextBox textBoxLName;
+        private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Button button1;
     }
 }

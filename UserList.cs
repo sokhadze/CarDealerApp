@@ -65,13 +65,15 @@ namespace CarDealerApp
             try
             {
                 if (RowID > 0)
+                {                 
+                    UserEdit ue = new UserEdit(RowID, FirstName, LastName, Phone);
+                    ue.Show();
+                    MyMethods.UserList(dataGridView1);
+                    LabelID.Text = "0";
+                }
+                else
                 {
-                    //MyMethods.UpdateUser(RowID, ); ;
-                    //MyMethods.UserList(dataGridView1);
-                    //LabelID.Text = "0";
-                   
-
-                    Console.WriteLine(FirstName +" "+LastName+" "+Phone+""+RowID);
+                    MessageBox.Show("გთხოვთ აირჩიოთ მომხმარებელი");
                 }
             }
             catch (Exception ex)
