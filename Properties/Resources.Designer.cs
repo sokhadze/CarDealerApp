@@ -73,6 +73,16 @@ namespace CarDealerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carsell {
+            get {
+                object obj = ResourceManager.GetObject("carsell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_group_67300 {
             get {
                 object obj = ResourceManager.GetObject("if_group_67300", resourceCulture);

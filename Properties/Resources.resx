@@ -124,13 +124,16 @@
   <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="addcar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addcar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_group_67300" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_group_67300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_red_64_67532" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_red_64_67532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addcar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addcar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carsell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carsell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
