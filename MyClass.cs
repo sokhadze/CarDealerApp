@@ -32,6 +32,14 @@ namespace CarDealerApp
         public string ManName { get; set; }
     }
 
+    public class UserListClass
+    {
+        public int ID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+    }
+
     public class CarModelListClass2
     {
         public int M_ID { get; set; }

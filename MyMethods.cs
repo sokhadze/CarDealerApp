@@ -64,12 +64,12 @@ namespace CarDealerApp
                 }
 
                 List<CarTypeListClass> ls = (from c in dt.AsEnumerable()
-                                          select new CarTypeListClass
-                                          {
-                                              T_ID = c.Field<int>("T_ID"),
-                                              CarTypeName = c.Field<string>("CarTypeName"),
-                                              CarTypeImg = c.Field<byte[]>("CarTypeImg")
-                                          }).ToList();
+                                             select new CarTypeListClass
+                                             {
+                                                 T_ID = c.Field<int>("T_ID"),
+                                                 CarTypeName = c.Field<string>("CarTypeName"),
+                                                 CarTypeImg = c.Field<byte[]>("CarTypeImg")
+                                             }).ToList();
 
                 return ls;
             }
@@ -77,6 +77,39 @@ namespace CarDealerApp
             {
                 MessageBox.Show(ex.Message);
                 return new List<CarTypeListClass>();
+            }
+        }
+        public static List<UserListClass> GetUserList()
+        {
+            try
+            {
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    SqlCommand sqlComm = conn.CreateCommand();
+                    sqlComm.CommandText = "SELECT * FROM [CarDealerDB].[dbo].[Users]";
+                    conn.Open();
+
+                    SqlDataReader dr = sqlComm.ExecuteReader();
+                    dt.Load(dr);
+                }
+
+                List<UserListClass> ls = (from c in dt.AsEnumerable()
+                                             select new UserListClass
+                                             {
+                                                 ID = c.Field<int>("User_ID"),
+                                                 FirstName = c.Field<string>("FirstName"),
+                                                 LastName = c.Field<string>("LastName"),
+                                                 Phone = c.Field<string>("Phone")
+                                             }).ToList();
+
+                return ls;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return new List<UserListClass>();
             }
         }
 
@@ -157,6 +190,30 @@ namespace CarDealerApp
                     conn.Open();
 
                     using (var command = new SqlCommand("SELECT * FROM SelectCar", conn))
+                    {
+                        table.Load(command.ExecuteReader());
+                        grid.DataSource = table;
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void OrderList(DataGridView grid)
+        {
+            try
+            {
+                DataTable table = new DataTable();
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    using (var command = new SqlCommand("SELECT * FROM Orders", conn))
                     {
                         table.Load(command.ExecuteReader());
                         grid.DataSource = table;
@@ -453,5 +510,32 @@ namespace CarDealerApp
                 MessageBox.Show(ex.Message);
             }
         }
+        public static void AddNewOrder(int _userID, int _carID, string dt)
+        {
+            try
+            {
+
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(ConnString);
+
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
+
+                string query = "INSERT INTO Orders(Usr_ID, Car_ID, Sell_DT) VALUES(@userid,@carid,@dt)";
+                SqlCommand SqlComm = new SqlCommand(query, conn);
+                SqlComm.Parameters.AddWithValue("@userid", _userID);
+                SqlComm.Parameters.AddWithValue("@carid", _carID);
+                SqlComm.Parameters.AddWithValue("@dt", dt);
+
+                int x = SqlComm.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show(x.ToString() + " Order წარმატებით დაემატა!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

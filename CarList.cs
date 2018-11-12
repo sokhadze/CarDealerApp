@@ -117,5 +117,28 @@ namespace CarDealerApp
             AddNewCar nc = new AddNewCar();
             nc.Show();
         }
+
+        private void sellBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RowID < 1)
+                {
+                    MessageBox.Show("გთხოვთ აირჩიოთ მანქანა!");
+                }
+                else
+                {
+                    SellCar ce = new SellCar(RowID);
+                    ce.Show();
+                    int idd;
+                    Int32.TryParse(label1.Text.ToString(), out idd);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

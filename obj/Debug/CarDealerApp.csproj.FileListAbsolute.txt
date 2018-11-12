@@ -22,3 +22,5 @@ C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.CarM
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.UserList.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddNewUser.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.UserEdit.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.SellCar.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.OrderList.resources

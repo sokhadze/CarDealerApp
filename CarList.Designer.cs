@@ -38,6 +38,7 @@
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sellBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carTypeBindingSource)).BeginInit();
@@ -106,11 +107,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // sellBtn
+            // 
+            this.sellBtn.Location = new System.Drawing.Point(421, 422);
+            this.sellBtn.Name = "sellBtn";
+            this.sellBtn.Size = new System.Drawing.Size(75, 23);
+            this.sellBtn.TabIndex = 6;
+            this.sellBtn.Text = "sell";
+            this.sellBtn.UseVisualStyleBackColor = true;
+            this.sellBtn.Click += new System.EventHandler(this.sellBtn_Click);
+            // 
             // CarList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 453);
+            this.Controls.Add(this.sellBtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.button2);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Button refreshBtn;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button sellBtn;
     }
 }

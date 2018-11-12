@@ -115,7 +115,8 @@ namespace CarDealerApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            OrderList ol = new OrderList();
+            ol.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
