@@ -43,14 +43,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(460, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(551, 303);
             this.dataGridView1.TabIndex = 0;
             // 
             // OrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 327);
+            this.ClientSize = new System.Drawing.Size(575, 327);
             this.Controls.Add(this.dataGridView1);
             this.Name = "OrderList";
             this.Text = "OrderList";

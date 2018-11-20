@@ -22,6 +22,7 @@ namespace CarDealerApp
             MyMethods.OrderList(dataGridView1);
 
             dataGridView1.Columns[0].Width = 24;
+            dataGridView1.Columns[3].Width = 24;
         }
     }
 }

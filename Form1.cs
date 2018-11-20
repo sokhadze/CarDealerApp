@@ -121,7 +121,8 @@ namespace CarDealerApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            GayiduliManqanebi gm = new GayiduliManqanebi();
+            gm.Show();
         }
     }
 }

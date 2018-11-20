@@ -213,7 +213,7 @@ namespace CarDealerApp
                 {
                     conn.Open();
 
-                    using (var command = new SqlCommand("SELECT * FROM Orders", conn))
+                    using (var command = new SqlCommand("SELECT * FROM OrderList", conn))
                     {
                         table.Load(command.ExecuteReader());
                         grid.DataSource = table;
@@ -238,6 +238,31 @@ namespace CarDealerApp
                     conn.Open();
 
                     using (var command = new SqlCommand("SELECT * FROM Users", conn))
+                    {
+                        table.Load(command.ExecuteReader());
+                        grid.DataSource = table;
+                        grid.Columns[0].Width = 22;
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void gayidulimanqanebi(DataGridView grid)
+        {
+            try
+            {
+                DataTable table = new DataTable();
+                string ConnString = ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(ConnString))
+                {
+                    conn.Open();
+
+                    using (var command = new SqlCommand("SELECT * FROM gayidulimanqanebi", conn))
                     {
                         table.Load(command.ExecuteReader());
                         grid.DataSource = table;
@@ -522,12 +547,19 @@ namespace CarDealerApp
                     conn.Open();
 
                 string query = "INSERT INTO Orders(Usr_ID, Car_ID, Sell_DT) VALUES(@userid,@carid,@dt)";
+                string query2 = "UPDATE [dbo].[Car] "+
+                                "SET [SC] = 1"+
+                                "FROM dbo.Car AS R"+
+                                "INNER JOIN dbo.Orders AS P"+
+                                       "ON R."+_carID+" = P.Car_ID"+
+                                "WHERE R." + _carID + " = p.Car_ID ";
                 SqlCommand SqlComm = new SqlCommand(query, conn);
+                SqlCommand SqlComm2 = new SqlCommand(query2, conn);
                 SqlComm.Parameters.AddWithValue("@userid", _userID);
                 SqlComm.Parameters.AddWithValue("@carid", _carID);
                 SqlComm.Parameters.AddWithValue("@dt", dt);
-
                 int x = SqlComm.ExecuteNonQuery();
+                SqlComm2.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show(x.ToString() + " Order წარმატებით დაემატა!");
             }

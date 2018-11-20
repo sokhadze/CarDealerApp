@@ -24,3 +24,4 @@ C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.AddN
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.UserEdit.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.SellCar.resources
 C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.OrderList.resources
+C:\Users\User\source\repos\CarDealerApp\CarDealerApp\obj\Debug\CarDealerApp.GayiduliManqanebi.resources
